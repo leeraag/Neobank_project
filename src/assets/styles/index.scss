@@ -1,0 +1,14 @@
+@import './normalize.scss';
+
+html,
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 10px;
+    width: auto;
+    background-color: #F5F4FF;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}

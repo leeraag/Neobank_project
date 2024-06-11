@@ -1,0 +1,70 @@
+@import '../../../assets/styles/vars.scss';
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    font: $text-large;
+    background-color: #E7E7E7;
+    padding: 5vmax 5vw;
+    gap: 15px;
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        &-link {
+            width: 60vw;
+            & figure {
+                margin: 0;
+            }
+        }
+
+        &-contacts {
+            margin-right: 5vw;;
+            .phone {
+                font: $h3;
+            }
+        }
+    }
+    &__navlinks {
+        &-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+    }
+}
+a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #000000;
+}
+
+a:hover {
+    color: #003CFF;
+}
+
+p {
+    color: #2D3748;
+}
+
+.divider {
+    background-color: #fff;
+    height: 2px;
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+    .footer__title-link {
+        & figure {
+            & img {
+                width: 70%;
+            }
+
+        }
+    }
+}

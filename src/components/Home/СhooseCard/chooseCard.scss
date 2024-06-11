@@ -1,0 +1,63 @@
+@import '../../../assets/styles/vars.scss';
+
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin: 3vh 0;
+    padding: 0 5vw;
+    box-sizing: border-box;
+
+    &__text {
+        width: 550px;
+        & h1 {
+            font: $h1;
+            line-height: 104%;
+            color: #1C1C1E;
+            margin: 0 0 10px 0;
+        }        
+    }
+    &__images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 45vw;
+        
+        & figure {
+            margin: 0;
+
+            & img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+    .card__text {
+        text-align: center;
+    }
+
+    .card__images {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+        width: 100vw;
+    }
+}
+
+@media (max-width: 1194px) {
+    .card__text {
+        width: 450px;
+        & h1 {
+            font-size: 32px;
+        }
+    }
+    .card__images {
+        margin-top: 20px;
+    }
+}

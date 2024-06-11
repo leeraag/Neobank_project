@@ -11,7 +11,6 @@
     box-sizing: border-box;
 
     &__text {
-        width: 550px;
         & h1 {
             font: $h1;
             line-height: 104%;
@@ -36,28 +35,61 @@
 }
 
 @media (min-width: 320px) and (max-width: 500px) {
-    .card__text {
-        text-align: center;
-    }
-
-    .card__images {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+    .card {
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 20px;
-        width: 100vw;
-    }
-}
 
-@media (max-width: 1194px) {
-    .card__text {
-        width: 450px;
-        & h1 {
-            font-size: 32px;
+        &__text {
+            text-align: center;
+            & h1 {
+                font-size: 32px;
+            }
+        }
+    
+        &__images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 100vw;
+            & figure {
+                width: 150%;
+            }
+        }
+
+        .mainBtn {
+            width: 100%;
+            margin-bottom: 20px;
+            span {
+                justify-content: center;
+            }
         }
     }
-    .card__images {
-        margin-top: 20px;
+    
+}
+
+@media (min-width: 501px) and (max-width: 1194px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+
+        &__text {
+            width: 450px;
+            & h1 {
+                font-size: 32px;
+            }
+        }
+
+        &__images {
+            margin-top: 20px;
+        }
+        .mainBtn {
+            width: 100%;
+            span {
+                justify-content: center;
+            }
+        }
     }
 }

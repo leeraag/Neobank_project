@@ -1,0 +1,60 @@
+@import '../../../assets/styles/vars.scss';
+
+.subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3vmax 0 10vmax 0;
+    padding: 0 5vw;
+    width: 100%;
+    box-sizing: border-box;
+
+    &__header {
+        color: #EB801D;
+        font: $h3;
+        text-align: center;
+    }
+
+    & p {
+        font: $h3;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    & p:last-of-type {
+        font-weight: 500;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        background: #FFFFFF;
+        box-shadow: 0px 10px 20px rgba(54, 58, 120, 0.1);
+        border-radius: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+        margin: 20px;
+
+        &-input {
+            border: none;
+        }
+
+        &-input:focus {
+            color: #003CFF;
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+    .subscribe__form {
+        flex-direction: column;
+
+        &-input::placeholder {
+            text-align: center;
+        }
+    }
+}

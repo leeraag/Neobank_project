@@ -14,4 +14,59 @@
         font: $text-large;
         text-align: center;
     }
+    
+    &__slider {
+        width: 90vw;
+
+        .slide {
+            width: 30% !important;
+        }
+    }
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        gap: 20px;
+        padding: 8px;
+        font: $text-large;
+        &-prev, &-next {
+            border-radius: 70px;
+            padding: 20px;
+            width: 64px;
+            height: 64px;
+        }
+
+        &-prev:enabled {
+            background: #003CFF url("../../../assets/icons/btnPrevActive.svg") no-repeat center;
+            border: none;
+        }
+
+        &-next:enabled {
+            background: #003CFF url("../../../assets/icons/btnNextActive.svg") no-repeat center;
+            border: none;
+        }
+
+        &-prev:disabled {
+            background: url("../../../assets/icons/btnPrevDisabled.svg") no-repeat center;
+            border: 1px solid #003CFF;
+        }
+
+        &-next:disabled {
+            background: url("../../../assets/icons/btnNextDisabled.svg") no-repeat center;
+            border: 1px solid #003CFF;
+        }
+
+    }
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+    .news__buttons {
+        justify-content: center;
+    }
+    .news__slider {
+        .slide {
+            width: 100% !important;
+        }
+    }
 }

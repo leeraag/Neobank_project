@@ -26,7 +26,7 @@ const Home: FC = () => {
         });
         setCurrencies(response);
     };
-
+    
     const receiveNews = async () => {
         const response = await getNews();
         if (response) {
@@ -38,8 +38,8 @@ const Home: FC = () => {
                     url,
                     urlToImage,
                 }) => {
-
-                if (description && urlToImage !== null) {  
+                const test = /.com/.test(urlToImage);
+                if (description && test && urlToImage !== null) {  
                     return {
                         title,
                         description,

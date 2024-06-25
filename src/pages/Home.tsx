@@ -39,7 +39,6 @@ const Home: FC = () => {
 
     const receiveNews = async () => {
         const response = await getNews();
-        console.log(response);
         if (response) {
             const articles: INews[] = response.data.articles;
             const newsList = articles.filter((

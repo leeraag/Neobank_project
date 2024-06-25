@@ -1,0 +1,71 @@
+@import '../../../assets/styles/vars.scss';
+
+.sliderCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    box-sizing: border-box;
+    height: 448px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.08), 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 28px;
+    padding: 32px;
+    margin: 20px;
+
+    &__figure {
+        width: auto;
+        height: 120px;
+        margin: 0;
+
+        &-img {
+            width: 256px;
+            height: 120px;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        text-align: center;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        &-link {
+            font: $h4;
+            text-align: center;
+            margin: 0;
+            text-decoration: none;
+            color: #111111;
+            cursor: pointer;
+        }
+        &-link:visited {
+            color: #111111;
+        }
+
+
+    }
+
+    &__description {
+        font: $text-large-bold;
+        text-align: center;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+@media (min-width: 320px) and (max-width: 400px)  {
+    .sliderCard__figure-img {
+        width: 200px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 2560px) {
+    .sliderCard {
+        width: 320px;
+        height: 448px;
+    }
+}

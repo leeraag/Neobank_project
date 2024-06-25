@@ -26,9 +26,20 @@ const Home: FC = () => {
         });
         setCurrencies(response);
     };
-    
+
+    const checkImage = (url: string) => {
+        const img = new Image();
+        img.src = url;
+        if (img.height !== 0 && img.width!== 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     const receiveNews = async () => {
         const response = await getNews();
+        console.log(response);
         if (response) {
             const articles: INews[] = response.data.articles;
             const newsList = articles.filter((
@@ -38,8 +49,9 @@ const Home: FC = () => {
                     url,
                     urlToImage,
                 }) => {
-                const test = /.com/.test(urlToImage);
-                if (description && test && urlToImage !== null) {  
+                // const validate = /.com/.test(urlToImage);
+                const validate = checkImage(urlToImage); 
+                if (description && urlToImage!== null && validate === true) {
                     return {
                         title,
                         description,

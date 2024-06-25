@@ -17,11 +17,8 @@
     
     &__slider {
         width: 90vw;
-
-        .slide {
-            width: 30% !important;
-        }
     }
+    
     &__buttons {
         display: flex;
         flex-direction: row;
@@ -40,11 +37,13 @@
         &-prev:enabled {
             background: #003CFF url("../../../assets/icons/btnPrevActive.svg") no-repeat center;
             border: none;
+            cursor: pointer;
         }
 
         &-next:enabled {
             background: #003CFF url("../../../assets/icons/btnNextActive.svg") no-repeat center;
             border: none;
+            cursor: pointer;
         }
 
         &-prev:disabled {
@@ -63,10 +62,5 @@
 @media (min-width: 320px) and (max-width: 500px) {
     .news__buttons {
         justify-content: center;
-    }
-    .news__slider {
-        .slide {
-            width: 100% !important;
-        }
     }
 }

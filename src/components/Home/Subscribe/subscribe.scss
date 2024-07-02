@@ -39,6 +39,8 @@
 
         &-input {
             border: none;
+            height: 30px;
+            font: $text;
         }
 
         &-input:focus {

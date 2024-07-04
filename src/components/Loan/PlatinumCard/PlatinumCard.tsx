@@ -3,7 +3,11 @@ import card from '../../../assets/images/cardImage1.svg';
 import './platinumCard.scss';
 import { Button, Tooltip } from '../../UI';
 
-const PlatinumCard: FC = () => {
+type TPlatinumCardProps = {
+    scroll: () => void
+};
+
+const PlatinumCard: FC<TPlatinumCardProps> = ({ scroll }) => {
     return (
         <article className="creditCard">
             <section className="creditCard__description">
@@ -34,7 +38,7 @@ const PlatinumCard: FC = () => {
                         </Tooltip>
                     </div>
                 </div>
-                <Button className={"mainBtn"}>Apply for card</Button>
+                <Button className={"mainBtn"} onClick={scroll}>Apply for card</Button>
             </section>
             
             <figure className="creditCard__figure">

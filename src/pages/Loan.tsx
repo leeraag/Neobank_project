@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { Header, 
         Footer, 
         PlatinumCard, 
@@ -7,7 +7,8 @@ import { Header,
         Rates,
         TabsPanel,
         Cashback,
-        FAQ } 
+        FAQ,
+        PrescoringForm } 
         from "../components"
 import { 
     headerlinks, 
@@ -27,13 +28,25 @@ const Loan: FC = () => {
         { title: 'Cashback', content: <Cashback cashback={cashbackItems}/> },
         { title: 'FAQ', content: <FAQ receivingCard={receivingCardItems} usingCard={usingCardItems}/> },
     ];
+    
+    const targetRef = useRef<HTMLDivElement>(null);
+
+    const scrollToTarget = () => {
+        if (targetRef.current) {
+            targetRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <div className="container">
             <Header headerlinks={headerlinks}/>
-            <PlatinumCard/>
+            <PlatinumCard scroll={scrollToTarget}/>
             <TabsPanel tabs={tabs} />
             <GetCard/>
+            <div ref={targetRef}>
+                <PrescoringForm/>
+            </div>
+
             <Footer footerlinks={footerlinks}/>
         </div>
     );

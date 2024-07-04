@@ -17,7 +17,7 @@ const Subscribe: FC = () => {
 
     const subscribeEmail = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (isSubscribed === false) {
+        if (isSubscribed === false && emailValue.length > 0) {
             await postEmail(emailValue).then(() => {
                 localStorage.setItem('isSubscribed', 'true');
                 setIsSubscribed(true);

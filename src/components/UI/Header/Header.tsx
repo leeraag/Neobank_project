@@ -18,7 +18,7 @@ const Header: FC<TLinks> = ({ headerlinks } ) => {
     return (
         <header className="header">
             <NavLink to="/" className="header__logo">
-                Neoflex
+                NeoBank
             </NavLink>
             <nav className="header__navbar">
                 <div className="header__navbar-icon" onClick={handleShowMenu}>

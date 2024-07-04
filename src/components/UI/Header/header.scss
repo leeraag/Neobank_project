@@ -50,16 +50,7 @@
         
         &-items ul a.active {
             position: relative;
-        }
-          
-        &-items ul a.active::after {
-            content: "";
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #003CFF;
+            color: #B2A35F;
         }
     }
 }

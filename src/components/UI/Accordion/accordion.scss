@@ -1,0 +1,26 @@
+@import '../../../assets/styles/vars.scss';
+
+.accordion {
+    &__section {
+        border: 1px solid #E2E8F0;
+        padding: 32px;
+
+        &-title {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            cursor: pointer;
+
+            & p {
+                font: $text-large-medium;
+                color: #1C1C1E;
+            }
+        }
+
+        &-description {
+            font: $text-large;
+            color: #7B7454;
+        }
+    }
+}

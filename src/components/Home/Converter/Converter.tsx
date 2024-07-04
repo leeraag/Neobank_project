@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import converter from '../../../assets/images/converter.svg';
-import { baseCurrencies } from '../../../constant/currencies';
+import { baseCurrencies } from '../../../constant';
 import './converter.scss';
+import { Loader } from '../../UI';
 
 type TCurrencies = {
     currencies: Array<any>;
@@ -24,7 +25,7 @@ const Converter: FC<TCurrencies> = ({ currencies }) => {
                             {Number.parseFloat(currency.value.data).toFixed(2)}
                         </li>
                     )
-                }) : <p className="converter__loader">Loading...</p>
+                }) : <Loader/>
             }
             </ul>
             <img src={converter} alt=""/>

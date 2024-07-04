@@ -1,0 +1,31 @@
+@import '../../../assets/styles/vars.scss';
+
+.tabs {
+  display: flex;
+  padding: 0 5vw;
+
+  & button {
+    font: $text-large-medium;
+    color: #7B7454;
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  & button.active {
+    border-bottom: 2px solid #7B7454;
+  }
+}
+
+.tab__content {
+  padding: 30px 0;
+  border-top: 2px solid rgba(128, 128, 128, 0.2);
+  margin: 0 5vw;
+}
+
+@media (min-width: 320px) and (max-width: 380px) {
+  .tabs button {
+    margin-right: 0;
+  }
+}

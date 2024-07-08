@@ -1,0 +1,21 @@
+@import '../../../assets/styles/vars.scss';
+
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    // margin: 0;
+    // padding: 0;
+
+    &__title {
+        font: $h3;
+    }
+
+    &__step {
+        font: $text-large-medium;
+    }
+}

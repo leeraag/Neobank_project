@@ -6,3 +6,8 @@ export { TabsPanel } from './TabsPanel';
 export { Accordion } from './Accordion';
 export { Loader } from './Loader';
 export { Tooltip } from './Tooltip';
+export { FormHeader } from './FormHeader';
+export { Label } from './Label';
+export { Input } from './Input';
+export { Select } from './Select';
+export { AmountInput } from './AmountInput';

@@ -7,8 +7,7 @@
     justify-content: center;
     margin: 3vh 5vw;
     box-sizing: border-box;
-    width: 90vw;
-
+    
     &__header {
         font: $h3;
     }
@@ -20,7 +19,7 @@
         justify-content: space-around;
         width: 100%;
         box-sizing: border-box;
-        gap: 70px;
+        gap: 60px;
 
         &-item {
             width: 500px;
@@ -40,7 +39,7 @@
                     width: 48px;
                     border-radius: 50px;
                     background-color: #D9D9D9;
-                    font: $text-large-bold;
+                    font: $text-large-medium;
                 }
 
                 &-line {

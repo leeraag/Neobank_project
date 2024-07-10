@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import './prescoringForm.scss';
-import { Button, FormHeader, Label, Input, Select, AmountInput } from '../../UI';
+import { Button, FormHeader, Label, Input, Select, AmountInput, Loader } from '../../UI';
 import { useFormik } from 'formik';
 import { prescoringSchema } from '../../../utils/prescoringSchema';
 import okField from '../../../assets/icons/okField.svg'
@@ -9,6 +9,16 @@ import requiredField from '../../../assets/icons/required.svg'
 import { postPrescoring } from '../../../api';
 
 const PrescoringForm: FC = () => {
+    const [isSending, setIsSending] = useState(false);
+
+    const handleSubmit = (formData: {}) => {
+        const sendPrescoringForm = async () => {
+            setIsSending(true);
+            await postPrescoring(formData)
+        }
+        const timer =  setTimeout(() => sendPrescoringForm(), 1000);
+        return () => clearTimeout(timer);
+    }
     const formik = useFormik({
         initialValues: {
             amount: '',
@@ -17,16 +27,26 @@ const PrescoringForm: FC = () => {
             middleName: '',
             term: '',
             email: '',
-            birthDate: '',
+            birthdate: '',
             passportSeries: '',
             passportNumber: ''
         },
         validationSchema: prescoringSchema,
         onSubmit: (values) => {
             // console.log(values);
-            const data = {...values, term: parseInt(values.term, 10)}
-            // console.log(data);
-            postPrescoring(data);
+            const formData = {
+                amount: parseInt(values.amount, 10),
+                lastName: values.lastName.trim(),
+                firstName: values.firstName.trim(),
+                middleName: values.middleName.trim(),
+                term: parseInt(values.term, 10),
+                email: values.email.trim(),
+                birthdate: values.birthdate,
+                passportSeries: values.passportSeries,
+                passportNumber: values.passportNumber
+            }
+            // console.log(formData);
+            handleSubmit(formData);
         },
     });
 
@@ -66,6 +86,8 @@ const PrescoringForm: FC = () => {
             value: formik.values.middleName,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
+            errors: formik.errors.middleName,
+            touched: formik.touched.middleName,
         },
         {
             id: "term",
@@ -97,17 +119,17 @@ const PrescoringForm: FC = () => {
             touched: formik.touched.email
         },
         {
-            id: "birthDate",
-            htmlFor: "birthDate",
+            id: "birthdate",
+            htmlFor: "birthdate",
             type: "date",
             label: "Your date of birth",
             placeholder: "Select Date and Time",
             required: true,
-            value: formik.values.birthDate,
+            value: formik.values.birthdate,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
-            errors: formik.errors.birthDate,
-            touched: formik.touched.birthDate
+            errors: formik.errors.birthdate,
+            touched: formik.touched.birthdate
         },
         {
             id: "passportSeries",
@@ -116,6 +138,7 @@ const PrescoringForm: FC = () => {
             label: "Your passport series",
             placeholder: "0000",
             required: true,
+            maxLength: 4,
             value: formik.values.passportSeries,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
@@ -129,6 +152,7 @@ const PrescoringForm: FC = () => {
             label: "Your passport number",
             placeholder: "000000",
             required: true,
+            maxLength: 6,
             value: formik.values.passportNumber,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
@@ -138,7 +162,10 @@ const PrescoringForm: FC = () => {
     ]
 
     return (
-        <article className="form">
+        <>
+        {
+            isSending ? <Loader /> :
+            <article className="form">
             <div className="form__header">
                 <div className="form__header-field">
                     <FormHeader title="Customize your card" step={1}/>
@@ -155,11 +182,10 @@ const PrescoringForm: FC = () => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values.amount}
-                            className={formik.errors.amount && formik.touched.amount ? 'defaultInput errorInput' : 'defaultInput'}
+                            className={formik.errors.amount && formik.touched.amount ? 'defaultAmountInput errorAmountInput' : 'defaultAmountInput'}
                         />
-                        { formik.errors.amount && formik.touched.amount && <img className='errorIcon' src={errorField} /> }
-                        { !formik.errors.amount && formik.touched.amount ? (<img className='okIcon' src={okField}/>) : ''}
                     </Label>
+                    {/* отображение ошибки */}
                     {
                         formik.errors.amount && formik.touched.amount ? (
                             <p className="error">{formik.errors.amount}</p>
@@ -197,6 +223,7 @@ const PrescoringForm: FC = () => {
                                         id={item.id}
                                         type={item.type}
                                         placeholder={item.placeholder}
+                                        maxLength={item.maxLength}
                                         onChange={item.onChange}
                                         onBlur={item.onBlur}
                                         value={item.value}
@@ -204,9 +231,15 @@ const PrescoringForm: FC = () => {
                                     />
                                 )
                             }
+                            {/* отображение иконки в поле */}
                             { item.errors && item.touched && <img className='errorIcon' src={errorField} /> }
-                            { !item.errors && item.touched ? (<img className='okIcon' src={okField}/>) : ''}
+                            {
+                                !item.errors && item.touched ? (
+                                    <img className='okIcon' src={okField}/>
+                                ) : ''
+                            }
                             </Label>
+                            {/* отображение ошибки */}
                             {
                                 item.errors && item.touched ? (
                                     <p className="error">{item.errors}</p>
@@ -219,9 +252,11 @@ const PrescoringForm: FC = () => {
                 <div className="form__main-button">
                     <Button type="submit" className="mainBtn">Continue</Button>
                 </div>
-
             </form>
-        </article>
+        </article>  
+        }
+        </>
+        
     );
 };
 

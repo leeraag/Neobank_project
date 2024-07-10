@@ -1,0 +1,16 @@
+@import '../../../assets/styles/vars.scss';
+
+.defaultAmountInput {
+    box-sizing: border-box;
+    background-color: #F9F5E3;
+    border: none;
+    outline: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 6px;
+    padding: 13px;
+    font: $text;
+    width: 100%;
+}
+
+.errorAmountInput {
+    outline: 2px solid #FF5631;
+}

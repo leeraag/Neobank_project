@@ -8,9 +8,9 @@ type TFormHeader = {
 
 const FormHeader: FC<TFormHeader> = ({ title, step }) => {
   return (
-    <div className="header">
-        <h3 className="header__title">{title}</h3>
-        <p className="header__step">Step {step} of 5</p>
+    <div className="formHeader">
+        <h3 className="formHeader__title">{title}</h3>
+        <p className="formHeader__step">Step {step} of 5</p>
     </div>
   );
 }

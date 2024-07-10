@@ -9,7 +9,7 @@ import { Header,
         Cashback,
         FAQ,
         PrescoringForm } 
-        from "../components"
+        from "@components"
 import { 
     headerlinks, 
     footerlinks, 
@@ -17,8 +17,10 @@ import {
     ratesItems, 
     cashbackItems,
     receivingCardItems,
-    usingCardItems } 
-    from "../constant";
+    usingCardItems,
+    cardFeatures,
+    getCardSteps} 
+    from "@constant";
 
 
 const Loan: FC = () => {
@@ -40,9 +42,9 @@ const Loan: FC = () => {
     return (
         <div className="container">
             <Header headerlinks={headerlinks}/>
-            <PlatinumCard scroll={scrollToTarget}/>
+            <PlatinumCard scroll={scrollToTarget} cardFeatures={cardFeatures} />
             <TabsPanel tabs={tabs} />
-            <GetCard/>
+            <GetCard getCardSteps={getCardSteps}/>
             <div ref={targetRef}>
                 <PrescoringForm/>
             </div>

@@ -1,12 +1,12 @@
 import { FC, useState } from 'react';
 import './prescoringForm.scss';
-import { Button, FormHeader, Label, Input, Select, AmountInput, Loader } from '../../UI';
+import { Button, FormHeader, Label, Input, Select, AmountInput, Loader } from '@UI';
 import { useFormik } from 'formik';
-import { prescoringSchema } from '../../../utils/prescoringSchema';
-import okField from '../../../assets/icons/okField.svg'
-import errorField from '../../../assets/icons/errorField.svg'
-import requiredField from '../../../assets/icons/required.svg'
-import { postPrescoring } from '../../../api';
+import { prescoringSchema } from '@utils';
+import okField from '@assets/icons/okField.svg'
+import errorField from '@assets/icons/errorField.svg'
+import requiredField from '@assets/icons/required.svg'
+import { postPrescoring } from '@api';
 
 const PrescoringForm: FC = () => {
     const [isSending, setIsSending] = useState(false);
@@ -33,7 +33,6 @@ const PrescoringForm: FC = () => {
         },
         validationSchema: prescoringSchema,
         onSubmit: (values) => {
-            // console.log(values);
             const formData = {
                 amount: parseInt(values.amount, 10),
                 lastName: values.lastName.trim(),
@@ -45,7 +44,6 @@ const PrescoringForm: FC = () => {
                 passportSeries: values.passportSeries,
                 passportNumber: values.passportNumber
             }
-            // console.log(formData);
             handleSubmit(formData);
         },
     });
@@ -189,7 +187,7 @@ const PrescoringForm: FC = () => {
                     {
                         formik.errors.amount && formik.touched.amount ? (
                             <p className="error">{formik.errors.amount}</p>
-                        ) : <p className="error"></p>
+                        ) : null
                     }
                 </div>
                 <div className="form__header-info">
@@ -209,7 +207,7 @@ const PrescoringForm: FC = () => {
                                 <span>
                                     <img className='requiredIcon' src={requiredField}/>
                                 </span>) 
-                            : ''}
+                            : null}
                             {
                                 item.select ? (
                                     <Select
@@ -232,18 +230,22 @@ const PrescoringForm: FC = () => {
                                 )
                             }
                             {/* отображение иконки в поле */}
-                            { item.errors && item.touched && <img className='errorIcon' src={errorField} /> }
+                            {
+                                item.errors && item.touched ? (
+                                    <img className='icon-error' src={errorField}/>
+                                ) : null
+                            }
                             {
                                 !item.errors && item.touched ? (
-                                    <img className='okIcon' src={okField}/>
-                                ) : ''
+                                    <img className='icon-success' src={okField}/>
+                                ) : null
                             }
                             </Label>
                             {/* отображение ошибки */}
                             {
                                 item.errors && item.touched ? (
                                     <p className="error">{item.errors}</p>
-                                ) : <p className="error"></p>
+                                ) : null
                             }
                         </div>
                     ))

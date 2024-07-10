@@ -6,7 +6,7 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import { Navigation } from 'swiper/modules';
 import { INews } from '../../../types/interfaces';
-import { Loader } from '../../UI';
+import { Loader } from '@UI';
 
 type TNewsProps = {
     news: Array<INews>

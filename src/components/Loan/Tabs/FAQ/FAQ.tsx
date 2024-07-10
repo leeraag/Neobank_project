@@ -1,7 +1,6 @@
 import { FC } from "react";
-import { Accordion } from "../../../../components";
-import { IReceivingCard } from '../../../../constant';
-import { IUsingCard } from "../../../../constant";
+import { Accordion } from "@UI";
+import { IReceivingCard, IUsingCard } from '../../../../constant';
 import './faq.scss';
 
 type TFAQProps = {

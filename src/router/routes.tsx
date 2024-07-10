@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Home, NotFound, Loan } from "../pages";
+import { Home, NotFound, Loan } from "@pages";
 
 enum RouteNames {
     HOME = '/',

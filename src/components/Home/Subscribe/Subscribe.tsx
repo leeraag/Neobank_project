@@ -1,9 +1,9 @@
 import { FC, ChangeEvent, FormEvent, useState, useEffect } from 'react';
-import { Button } from '../../UI';
-import airplane from '../../../assets/icons/airplane.svg'
-import email from '../../../assets/icons/email.svg'
+import { Button } from '@UI';
+import airplane from '@assets/icons/airplane.svg'
+import email from '@assets/icons/email.svg'
 import './subscribe.scss'
-import { postEmail } from '../../../api';
+import { postEmail } from '@api';
 
 const Subscribe: FC = () => {
     const [emailValue, setEmailValue] = useState('');

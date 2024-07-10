@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import './accordion.scss'
-import Down from '../../../assets/icons/Expand_down.svg'
-import Up from '../../../assets/icons/Expand_up.svg'
+import Down from '@assets/icons/Expand_down.svg'
+import Up from '@assets/icons/Expand_up.svg'
 
 type TAccordionProps = {
   sections: { id: number, title: string; description: string }[];

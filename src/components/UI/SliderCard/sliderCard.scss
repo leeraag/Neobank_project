@@ -1,4 +1,4 @@
-@import '../../../assets/styles/vars.scss';
+@import '@assets/styles/vars.scss';
 
 .sliderCard {
     display: flex;
@@ -29,6 +29,7 @@
     &__title {
         text-align: center;
         display: -webkit-box;
+        line-clamp: 3;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
@@ -53,6 +54,7 @@
         margin: 0;
         display: -webkit-box;
         -webkit-line-clamp: 3;
+        line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }

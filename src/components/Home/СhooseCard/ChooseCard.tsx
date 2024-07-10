@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import { Button } from '../../UI';
-import cardImage1 from '../../../assets/images/cardImage1.svg';
-import cardImage2 from '../../../assets/images/cardImage2.svg';
-import cardImage3 from '../../../assets/images/cardImage3.svg';
-import cardImage4 from '../../../assets/images/cardImage4.svg';
+import { Button } from '@UI';
+import cardImage1 from '@assets/images/cardImage1.svg';
+import cardImage2 from '@assets/images/cardImage2.svg';
+import cardImage3 from '@assets/images/cardImage3.svg';
+import cardImage4 from '@assets/images/cardImage4.svg';
 import './chooseCard.scss';
 
 type TCard = {

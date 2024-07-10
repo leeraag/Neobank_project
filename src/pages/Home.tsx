@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from "react";
-import { headerlinks, footerlinks, mockCurrencies } from "../constant";
+import { headerlinks, footerlinks, baseCurrencies, mockCurrencies } from "@constant";
 import {
     Header,
     ChooseCard,
@@ -9,9 +9,8 @@ import {
     Footer,
     Converter,
     News
-} from "../components";
-import { getCurrencies, getNews } from "../api/index";
-import { baseCurrencies } from "../constant/currencies"
+} from "@components";
+import { getCurrencies, getNews } from "@api";
 import { INews } from "../types/interfaces";
 
 const Home: FC = () => {

@@ -1,8 +1,8 @@
-import Money from '../../assets/icons/money.svg';
-import Calendar from '../../assets/icons/calendar.svg';
-import Clock from '../../assets/icons/clock.svg';
-import Bag from '../../assets/icons/bag.svg';
-import Credit_card from '../../assets/icons/credit_card.svg';
+import Money from '@assets/icons/money.svg';
+import Calendar from '@assets/icons/calendar.svg';
+import Clock from '@assets/icons/clock.svg';
+import Bag from '@assets/icons/bag.svg';
+import Credit_card from '@assets/icons/credit_card.svg';
 
 export interface IAbout {
     id: number;

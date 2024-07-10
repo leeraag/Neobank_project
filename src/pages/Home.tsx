@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from "react";
-import { headerlinks, footerlinks } from "../constant";
+import { headerlinks, footerlinks, mockCurrencies } from "../constant";
 import {
     Header,
     ChooseCard,
@@ -16,15 +16,25 @@ import { INews } from "../types/interfaces";
 
 const Home: FC = () => {
     const [currencies, setCurrencies] = useState([]);
+    const [mockData, setMockData] = useState<string[]>([]);
     const [news, setNews] = useState<INews[]>([]);
     const miliseconds: number = 1000;
     const seconds: number = 60;
     const minutes: number = 15;
     const convertCurrencies = async () => {
-        const response = await getCurrencies(baseCurrencies).then(function (response: any) {
+        const response = await getCurrencies(baseCurrencies)
+        .then(function (response: any) {
             return response;
+        })
+        .catch(function (error: any) {
+            console.error(error.response.data)
         });
-        setCurrencies(response);
+        if (response.data) {
+            setCurrencies(response);
+        }
+        else {
+            setMockData(mockCurrencies);
+        }
     };
 
     const checkImage = (url: string) => {
@@ -76,7 +86,7 @@ const Home: FC = () => {
             <Header headerlinks={headerlinks}/>
             <ChooseCard />
             <BankFeatures/>
-            <Converter currencies={currencies}/>
+            <Converter currencies={currencies} mockCurrencies={mockData}/>
             <Map/>
             <News news={news}/>
             <Subscribe/>

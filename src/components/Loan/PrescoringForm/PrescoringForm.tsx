@@ -198,7 +198,7 @@ const PrescoringForm: FC = () => {
                 </div>
             </div>
             <form onSubmit={formik.handleSubmit} className="form__main">
-                <h3>Contact information</h3>
+                <h3 className="form__main-title">Contact information</h3>
                 <div className="form__main-fields">
                 {
                     fieldsData.map(item => (

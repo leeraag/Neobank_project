@@ -48,6 +48,11 @@
     &__main {
         display: flex;
         flex-direction: column;
+
+        &-title {
+            font: $caption-bold;
+        }
+        
         &-fields {
             display: flex;
             justify-content: space-between;

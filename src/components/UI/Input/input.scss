@@ -1,0 +1,24 @@
+@import '@assets/styles/vars.scss';
+
+.defaultInput {
+    box-sizing: border-box;
+    background-color: #F9F5E3;
+    border: none;
+    outline: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 6px;
+    padding: 13px;
+    font: $text;
+    width: 100%;
+}
+
+.errorInput {
+    outline: 2px solid #FF5631;
+}
+
+.okInput {
+    outline: 2px solid #008000;
+}
+
+input:focus {
+    outline: 2px solid #5B35D5;
+}

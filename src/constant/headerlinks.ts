@@ -8,7 +8,7 @@ export const headerlinks: Array<THeaderLinks> = [
     {
         id: 1,
         children: 'Credit card',
-        to: '/card'
+        to: '/loan'
     },
     {
         id: 2,

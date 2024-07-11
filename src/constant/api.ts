@@ -4,3 +4,7 @@ export const API_URL_CURRENCY = 'https://currency-exchange.p.rapidapi.com/exchan
 
 export const API_KEY_NEWS = '38fe918cbcd549bca1af30190b1dca4c'
 export const API_URL_NEWS = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=' + API_KEY_NEWS;
+
+export const API_URL_EMAIL = 'http://localhost:8080/email'
+
+export const API_URL_PRESCORING = 'http://localhost:8080/application'

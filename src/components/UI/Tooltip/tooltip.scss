@@ -1,0 +1,23 @@
+@import '@assets/styles/vars.scss';
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    &__text {
+        visibility: hidden;
+        width: 170px;
+        background-color: #3D3D3D;
+        color: #FFFFFF;
+        font: $tooltip;
+        padding: 7px;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+    }
+}
+
+.tooltip:hover .tooltip__text {
+    visibility: visible;
+}

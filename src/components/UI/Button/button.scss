@@ -1,4 +1,4 @@
-@import '../../../assets/styles/vars.scss';
+@import '@assets/styles/vars.scss';
 
 .mainBtn {
     width: max-content;
@@ -12,11 +12,14 @@
     box-sizing: border-box;
     cursor: pointer;
 
-    &:hover {
-        transition: 0.3s;
+    &:active {
         -webkit-box-shadow: 0px 0px 18px 0px rgba(34, 60, 80, 0.2);
         -moz-box-shadow: 0px 0px 18px 0px rgba(34, 60, 80, 0.2);
         box-shadow: 0px 0px 18px 0px rgba(34, 60, 80, 0.2);
+    }
+
+    &:hover {
+        background-color: #7796C0;
     }
 
     & span {
@@ -42,11 +45,14 @@
     box-sizing: border-box;
     cursor: pointer;
 
-    &:hover {
-        transition: 0.3s;
+    &:active {
         -webkit-box-shadow: 0px 0px 18px 0px rgba(34, 60, 80, 0.2);
         -moz-box-shadow: 0px 0px 18px 0px rgba(34, 60, 80, 0.2);
         box-shadow: 0px 0px 18px 0px rgba(34, 60, 80, 0.2);
+    }
+
+    &:hover {
+        background-color: #7796C0;
     }
 
     & span {

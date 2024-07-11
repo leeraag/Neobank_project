@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import neoflex from '../../../assets/images/neoflex.svg'
+import neoflex from '@assets/images/neoflex.svg'
 import './footer.scss';
 
 type TLinks = {

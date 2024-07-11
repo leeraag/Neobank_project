@@ -1,0 +1,14 @@
+@import '@assets/styles/vars.scss';
+
+.label {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    font: $text-large-medium;
+
+    span {
+        display: flex;
+        align-items: start;
+    }
+}

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import map from '../../../assets/images/map.svg';
+import map from '@assets/images/map.svg';
 import './map.scss';
 
 const Map: FC = () => {

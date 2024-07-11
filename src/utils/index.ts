@@ -1,0 +1,1 @@
+export { prescoringSchema } from './prescoringSchema';

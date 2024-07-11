@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Header } from "../components"
-import { headerlinks } from "../constant";
+import { Header } from "@components"
+import { headerlinks } from "@constant";
 
 const NotFound: FC = () => {
 

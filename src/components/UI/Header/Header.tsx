@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
-import { Button } from '../Button';
+import { Button } from '@UI';
 import { NavLink } from 'react-router-dom';
-import hamburger from '../../../assets/icons/hamburger-menu.svg'
+import hamburger from '@assets/icons/hamburger-menu.svg'
 import './header.scss';
 
 type TLinks = {
@@ -18,7 +18,7 @@ const Header: FC<TLinks> = ({ headerlinks } ) => {
     return (
         <header className="header">
             <NavLink to="/" className="header__logo">
-                Neoflex
+                NeoBank
             </NavLink>
             <nav className="header__navbar">
                 <div className="header__navbar-icon" onClick={handleShowMenu}>

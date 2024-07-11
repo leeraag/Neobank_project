@@ -1,13 +1,15 @@
 import { FC } from 'react';
-import converter from '../../../assets/images/converter.svg';
-import { baseCurrencies } from '../../../constant/currencies';
+import converter from '@assets/images/converter.svg';
+import { baseCurrencies } from '@constant';
 import './converter.scss';
+import { Loader } from '@UI';
 
 type TCurrencies = {
-    currencies: Array<any>;
+    currencies?: Array<any>;
+    mockCurrencies?: Array<any>;
 };
 
-const Converter: FC<TCurrencies> = ({ currencies }) => {
+const Converter: FC<TCurrencies> = ({ currencies, mockCurrencies }) => {
     return (
         <article className="converter">
         <div className="converter__header-main">
@@ -17,14 +19,23 @@ const Converter: FC<TCurrencies> = ({ currencies }) => {
         <h3 className="converter__header">Currency</h3>
         <div className="converter__currencies">
             <ul className="converter__currencies-list">
-            {currencies.length ? currencies.map((currency, index: number) => {
+            {
+                currencies?.length ? currencies.map((currency, index: number) => {
                     return (
                         <li key={index}>
                             <span>{baseCurrencies[index].from}: </span>
                             {Number.parseFloat(currency.value.data).toFixed(2)}
                         </li>
                     )
-                }) : <p className="converter__loader">Loading...</p>
+                }) :
+                mockCurrencies?.length ? mockCurrencies.map((currency, index: number) => {
+                    return (
+                        <li key={index}>
+                            <span>{baseCurrencies[index].from}: </span>
+                            {currency}
+                        </li>
+                    )
+                }) : <Loader/>
             }
             </ul>
             <img src={converter} alt=""/>

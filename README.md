@@ -28,3 +28,9 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+# How to run backend
+- Download docker file (https://disk.yandex.ru/d/FpYx4fmCnn50Pg) to run the backend
+- Open terminal from the directory where this file is located 
+- Command "docker-compose up --build" starts the main container
+- After downloading and starting the container at localhost:8080/swagger-ui/index.html swagger opens, where you can view all available API methods

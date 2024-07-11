@@ -1,4 +1,4 @@
-@import '../../../assets/styles/vars.scss';
+@import '@assets/styles/vars.scss';
 
 .subscribe {
     display: flex;
@@ -39,6 +39,8 @@
 
         &-input {
             border: none;
+            height: 30px;
+            font: $text;
         }
 
         &-input:focus {

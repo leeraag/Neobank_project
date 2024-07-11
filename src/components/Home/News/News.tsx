@@ -6,6 +6,7 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import { Navigation } from 'swiper/modules';
 import { INews } from '../../../types/interfaces';
+import { Loader } from '@UI';
 
 type TNewsProps = {
     news: Array<INews>
@@ -53,11 +54,11 @@ const News: FC<TNewsProps> = ({ news }) => {
                         },
                     }}>
                     {
-                        news.map(({title, description, url, urlToImage}) => {return (
+                        news.length ? news.map(({title, description, url, urlToImage}) => {return (
                             <SwiperSlide key={title} className='slide'>
                                 <SliderCard title={title} description={description} url={url} urlToImage={urlToImage}/>
                             </SwiperSlide>
-                        )}) 
+                        )}) : <Loader/>
                     }
                 </Swiper>
                 <div className='news__buttons'>

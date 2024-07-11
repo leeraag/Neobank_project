@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import check from '../../../assets/icons/check.svg';
-import person from '../../../assets/images/person.svg';
+import check from '@assets/icons/check.svg';
+import person from '@assets/images/person.svg';
 import './bankFeatures.scss';
 
 type TFeature = {

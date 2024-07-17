@@ -1,50 +1,56 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import './prescoringForm.scss';
-import { Button, FormHeader, Label, Input, Select, AmountInput, Loader } from '@UI';
+import { Button, FormHeader, Label, Input, Select, AmountInput } from '@UI';
 import { useFormik } from 'formik';
 import { prescoringSchema } from '@utils';
 import okField from '@assets/icons/okField.svg'
 import errorField from '@assets/icons/errorField.svg'
 import requiredField from '@assets/icons/required.svg'
 import { postPrescoring } from '@api';
+import { useDispatch, useSelector } from 'react-redux';
+import { setButtonText, 
+        setPrescoringStep, 
+        setStatus, 
+        formDataState, 
+        setFormData, 
+        setOffers } from "../../../store/prescoringSlice";
 
 const PrescoringForm: FC = () => {
-    const [isSending, setIsSending] = useState(false);
+    const dispatch = useDispatch();
+    const initialFormData = useSelector(formDataState);
 
-    const handleSubmit = (formData: {}) => {
-        const sendPrescoringForm = async () => {
-            setIsSending(true);
-            await postPrescoring(formData)
+    const handleSubmit = async (formValues: {}) => {
+        // включается loader
+        dispatch(setStatus("loading"));
+        try {
+            const result = await postPrescoring(formValues);
+            if (result) {
+                dispatch(setOffers(result))
+                dispatch(setButtonText("Choose an offer"));
+                dispatch(setStatus("success"));
+                dispatch(setPrescoringStep(2));
+            } else throw new Error();
+        } catch (error) {
+            dispatch(setStatus("error"));
         }
-        const timer =  setTimeout(() => sendPrescoringForm(), 1000);
-        return () => clearTimeout(timer);
     }
     const formik = useFormik({
-        initialValues: {
-            amount: '',
-            lastName: '',
-            firstName: '',
-            middleName: '',
-            term: '',
-            email: '',
-            birthdate: '',
-            passportSeries: '',
-            passportNumber: ''
-        },
+        initialValues: initialFormData,
         validationSchema: prescoringSchema,
         onSubmit: (values) => {
-            const formData = {
+            const formValues = {
                 amount: parseInt(values.amount, 10),
                 lastName: values.lastName.trim(),
                 firstName: values.firstName.trim(),
-                middleName: values.middleName.trim(),
+                middleName: values.middleName,
                 term: parseInt(values.term, 10),
                 email: values.email.trim(),
                 birthdate: values.birthdate,
                 passportSeries: values.passportSeries,
                 passportNumber: values.passportNumber
             }
-            handleSubmit(formData);
+            dispatch(setFormData(formValues));
+            handleSubmit(formValues);
         },
     });
 
@@ -56,7 +62,6 @@ const PrescoringForm: FC = () => {
             label: "Your last name",
             placeholder: "For Example Doe",
             required: true,
-            value: formik.values.lastName,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
             errors: formik.errors.lastName,
@@ -69,7 +74,6 @@ const PrescoringForm: FC = () => {
             label: "Your first name",
             placeholder: "For Example John",
             required: true,
-            value: formik.values.firstName,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
             errors: formik.errors.firstName,
@@ -81,7 +85,6 @@ const PrescoringForm: FC = () => {
             type: "text",
             label: "Your patronymic",
             placeholder: "For Example Victorovich",
-            value: formik.values.middleName,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
             errors: formik.errors.middleName,
@@ -99,7 +102,6 @@ const PrescoringForm: FC = () => {
                 { value: 24, label: "24 months" },
             ],
             label: "Select term",
-            value: formik.values.term,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
         },
@@ -110,7 +112,6 @@ const PrescoringForm: FC = () => {
             label: "Your email",
             placeholder: "test@gmail.com",
             required: true,
-            value: formik.values.email,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
             errors: formik.errors.email,
@@ -123,7 +124,6 @@ const PrescoringForm: FC = () => {
             label: "Your date of birth",
             placeholder: "Select Date and Time",
             required: true,
-            value: formik.values.birthdate,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
             errors: formik.errors.birthdate,
@@ -137,7 +137,6 @@ const PrescoringForm: FC = () => {
             placeholder: "0000",
             required: true,
             maxLength: 4,
-            value: formik.values.passportSeries,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
             errors: formik.errors.passportSeries,
@@ -151,7 +150,6 @@ const PrescoringForm: FC = () => {
             placeholder: "000000",
             required: true,
             maxLength: 6,
-            value: formik.values.passportNumber,
             onChange: formik.handleChange,
             onBlur: formik.handleBlur,
             errors: formik.errors.passportNumber,
@@ -160,105 +158,103 @@ const PrescoringForm: FC = () => {
     ]
 
     return (
-        <>
-        {
-            isSending ? <Loader /> :
-            <article className="form">
-            <div className="form__header">
-                <div className="form__header-field">
-                    <FormHeader title="Customize your card" step={1}/>
-                    <Label htmlFor={'amountId'}>
-                        {"Select amount"}
-                        {/* этот компонент изменится */}
-                        <AmountInput
-                            id={"amountId"}
-                            name={"amount"}
-                            type={"number"}
-                            min={15000}
-                            max={600000}
-                            placeholder={"Select amount"}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.amount}
-                            className={formik.errors.amount && formik.touched.amount ? 'defaultAmountInput errorAmountInput' : 'defaultAmountInput'}
-                        />
-                    </Label>
-                    {/* отображение ошибки */}
-                    {
-                        formik.errors.amount && formik.touched.amount ? (
-                            <p className="error">{formik.errors.amount}</p>
-                        ) : null
-                    }
-                </div>
-                <div className="form__header-info">
-                    <p className="info__title">You have chosen the amount</p>
-                    <p className={formik.values.amount ? "info__value-visible" : "info__value-default"}>{formik.values.amount} ₽</p>
-                </div>
-            </div>
-            <form onSubmit={formik.handleSubmit} className="form__main">
-                <h3 className="form__main-title">Contact information</h3>
-                <div className="form__main-fields">
+        <article className="form">
+        <div className="form__header">
+            <div className="form__header-field">
+                <FormHeader title="Customize your card" step={1}/>
+                <Label htmlFor={'amountId'}>
+                    {"Select amount"}
+                    {/* этот компонент изменится */}
+                    <AmountInput
+                        id={"amountId"}
+                        name={"amount"}
+                        type={"number"}
+                        min={15000}
+                        max={600000}
+                        placeholder={"Select amount"}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.amount}
+                        className={formik.errors.amount && formik.touched.amount ? 'defaultAmountInput errorAmountInput' : 'defaultAmountInput'}
+                    />
+                </Label>
+                {/* отображение ошибки */}
                 {
-                    fieldsData.map(item => (
-                        <div key={item.id} className="field">
-                            <Label htmlFor={item.id}>
-                            {item.label}
-                            {item.required === true ? (
-                                <span>
-                                    <img className='requiredIcon' src={requiredField}/>
-                                </span>) 
-                            : null}
-                            {
-                                item.select ? (
-                                    <Select
-                                        id={item.id}
-                                        onChange={item.onChange}
-                                        onBlur={item.onBlur}
-                                        options={item.options}
-                                    />
-                                ) : (
-                                    <Input
-                                        id={item.id}
-                                        type={item.type}
-                                        placeholder={item.placeholder}
-                                        maxLength={item.maxLength}
-                                        onChange={item.onChange}
-                                        onBlur={item.onBlur}
-                                        value={item.value}
-                                        className={item.errors && item.touched ? 'defaultInput errorInput' : 'defaultInput'}
-                                    />
-                                )
-                            }
-                            {/* отображение иконки в поле */}
-                            {
-                                item.errors && item.touched ? (
-                                    <img className='icon-error' src={errorField}/>
-                                ) : null
-                            }
-                            {
-                                !item.errors && item.touched ? (
-                                    <img className='icon-success' src={okField}/>
-                                ) : null
-                            }
-                            </Label>
-                            {/* отображение ошибки */}
-                            {
-                                item.errors && item.touched ? (
-                                    <p className="error">{item.errors}</p>
-                                ) : null
-                            }
-                        </div>
-                    ))
+                    formik.errors.amount && formik.touched.amount ? (
+                        <p className="error">
+                            <>{formik.errors.amount}</>
+                        </p>
+                    ) : null
                 }
-                </div>
-                <div className="form__main-button">
-                    <Button type="submit" className="mainBtn">Continue</Button>
-                </div>
-            </form>
-        </article>  
-        }
-        </>
-        
+            </div>
+            <div className="form__header-info">
+                <p className="info__title">You have chosen the amount</p>
+                <p className={formik.values.amount ? "info__value-visible" : "info__value-default"}>{formik.values.amount} ₽</p>
+            </div>
+        </div>
+        <form onSubmit={formik.handleSubmit} className="form__main">
+            <h3 className="form__main-title">Contact information</h3>
+            <div className="form__main-fields">
+            {
+                fieldsData.map(item => (
+                    <div key={item.id} className="field">
+                        <Label htmlFor={item.id}>
+                        {item.label}
+                        {item.required === true ? (
+                            <span>
+                                <img className='requiredIcon' src={requiredField}/>
+                            </span>) 
+                        : null}
+                        {
+                            item.select ? (
+                                <Select
+                                    id={item.id}
+                                    onChange={item.onChange}
+                                    onBlur={item.onBlur}
+                                    options={item.options}
+                                />
+                            ) : (
+                                <Input
+                                    id={item.id}
+                                    type={item.type}
+                                    placeholder={item.placeholder}
+                                    maxLength={item.maxLength}
+                                    onChange={item.onChange}
+                                    onBlur={item.onBlur}
+                                    // value={item.value}
+                                    className={item.errors && item.touched ? 'defaultInput errorInput' : 'defaultInput'}
+                                />
+                            )
+                        }
+                        {/* отображение иконки в поле */}
+                        {
+                            item.errors && item.touched ? (
+                                <img className='icon-error' src={errorField}/>
+                            ) : null
+                        }
+                        {
+                            !item.errors && item.touched ? (
+                                <img className='icon-success' src={okField}/>
+                            ) : null
+                        }
+                        </Label>
+                        {/* отображение ошибки */}
+                        {
+                            item.errors && item.touched ? (
+                                <p className="error">
+                                    <>{item.errors}</>
+                                </p>
+                            ) : null
+                        }
+                    </div>
+                ))
+            }
+            </div>
+            <div className="form__main-button">
+                <Button type="submit" className="mainBtn">Continue</Button>
+            </div>
+        </form>
+    </article>        
     );
 };
 

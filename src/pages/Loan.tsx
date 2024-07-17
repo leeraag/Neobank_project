@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { FC, useRef, ReactNode } from "react";
 import { Header, 
         Footer, 
         PlatinumCard, 
@@ -8,7 +8,10 @@ import { Header,
         TabsPanel,
         Cashback,
         FAQ,
-        PrescoringForm } 
+        PrescoringForm,
+        LoanOffers,
+        Loader,
+        LoanMessage } 
         from "@components"
 import { 
     headerlinks, 
@@ -21,9 +24,15 @@ import {
     cardFeatures,
     getCardSteps} 
     from "@constant";
-
+import { useSelector } from 'react-redux'
+import '@assets/styles/index.scss';
+import { statusState, prescoringStepState, buttonTextState } from "../store/prescoringSlice";
 
 const Loan: FC = () => {
+    const buttonText = useSelector(buttonTextState);
+    const step = useSelector(prescoringStepState);
+    const status = useSelector(statusState);
+
     const tabs = [
         { title: 'About card', content: <About about={aboutItems}/> },
         { title: 'Rates and conditions', content: <Rates rates={ratesItems}/> },
@@ -39,16 +48,30 @@ const Loan: FC = () => {
         }
     };
 
+    const prescoringModule = (): ReactNode => {
+        if (step === 1) return <PrescoringForm />;
+        else if (step === 2) return <LoanOffers />;
+        else if (step === 3) return <LoanMessage/>
+
+    };
+
     return (
         <div className="container">
             <Header headerlinks={headerlinks}/>
-            <PlatinumCard scroll={scrollToTarget} cardFeatures={cardFeatures} />
+            <PlatinumCard scroll={scrollToTarget} cardFeatures={cardFeatures} text={buttonText}/>
             <TabsPanel tabs={tabs} />
             <GetCard getCardSteps={getCardSteps}/>
             <div ref={targetRef}>
-                <PrescoringForm/>
+                {status === "loading" ? (
+                    <Loader />
+                ) : status === "error" ? (
+                    <p className="request-error">
+                        Your request cannot be processed, an error has occurred
+                    </p>
+                ) : (
+                    prescoringModule()
+                )}
             </div>
-
             <Footer footerlinks={footerlinks}/>
         </div>
     );

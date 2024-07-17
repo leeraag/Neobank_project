@@ -11,3 +11,4 @@ export { Label } from './Label';
 export { Input } from './Input';
 export { Select } from './Select';
 export { AmountInput } from './AmountInput';
+export { LoanCard } from './LoanCard';

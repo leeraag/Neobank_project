@@ -8,3 +8,5 @@ export const API_URL_NEWS = 'https://newsapi.org/v2/top-headlines?country=us&cat
 export const API_URL_EMAIL = 'http://localhost:8080/email'
 
 export const API_URL_PRESCORING = 'http://localhost:8080/application'
+
+export const API_URL_OFFER = 'http://localhost:8080/application/apply'

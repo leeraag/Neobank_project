@@ -163,15 +163,14 @@ const PrescoringForm: FC = () => {
             <div className="form__header-field">
                 <FormHeader title="Customize your card" step={1}/>
                 <Label htmlFor={'amountId'}>
-                    {"Select amount"}
-                    {/* этот компонент изменится */}
                     <AmountInput
                         id={"amountId"}
                         name={"amount"}
-                        type={"number"}
+                        type={"range"}
                         min={15000}
                         max={600000}
-                        placeholder={"Select amount"}
+                        step={500}
+                        list={"values"}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.amount}
@@ -244,7 +243,8 @@ const PrescoringForm: FC = () => {
                                 <p className="error">
                                     <>{item.errors}</>
                                 </p>
-                            ) : null
+                            // чтобы не съезжала иконка в поле
+                            ) : <p className="error"></p> 
                         }
                     </div>
                 ))

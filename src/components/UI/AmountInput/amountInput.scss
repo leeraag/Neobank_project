@@ -1,13 +1,50 @@
 @import '@assets/styles/vars.scss';
 
+.amountInput {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 24px;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    &__title {
+        font: $text-large-medium;
+        margin-bottom: 20px;
+        color: #000000;
+    }
+
+    &__value {
+        text-align: left;
+        font: $text-large-medium;
+    }
+
+    &__caption {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        writing-mode: horizontal-tb;
+        width: 100%;
+
+        &-item {
+            padding: 0;
+            font: $text-large-medium;
+            color: #786D6D;
+        }
+    }
+}
+
+.amountInput:has(.defaultAmountInput:focus) {
+    outline: 2px solid #5B35D5;
+}
+
 .defaultAmountInput {
     box-sizing: border-box;
-    background-color: #F9F5E3;
-    border: none;
-    outline: 1px solid rgba(128, 128, 128, 0.2);
-    border-radius: 6px;
-    padding: 13px;
-    font: $text;
+    accent-color: #5B35D5;
+    color: #E2E8F0;
+    margin: 25px 0 25px 0;
     width: 100%;
 }
 

@@ -24,14 +24,20 @@ import {
     cardFeatures,
     getCardSteps} 
     from "@constant";
-import { useSelector } from 'react-redux'
+import { useAppSelector } from "../hooks";
 import '@assets/styles/index.scss';
 import { statusState, prescoringStepState, buttonTextState } from "../store/prescoringSlice";
+import { applicationStepState, applicationIdState } from "../store/applicationSlice";
+import { useNavigate } from "react-router-dom";
+import { routes } from "../router/routes";
 
 const Loan: FC = () => {
-    const buttonText = useSelector(buttonTextState);
-    const step = useSelector(prescoringStepState);
-    const status = useSelector(statusState);
+    const buttonText = useAppSelector(buttonTextState);
+    const prescoringStep = useAppSelector(prescoringStepState);
+    const status = useAppSelector(statusState);
+    const applicationStep = useAppSelector(applicationStepState);
+    const applicationId = useAppSelector(applicationIdState);
+    const navigate = useNavigate();
 
     const tabs = [
         { title: 'About card', content: <About about={aboutItems}/> },
@@ -48,17 +54,33 @@ const Loan: FC = () => {
         }
     };
 
+    // проверить шаг заявки и перейти к нужной странице
+    const checkApplicationStatus = () => {
+        console.log('Testing continue registration')
+        console.log(routes[2])
+        if (applicationStep === 3) {
+            navigate(`/loan/${applicationId}`);
+        }
+    }
+
+    // отображение модуля прескоринга в зависимости от текущего шага
     const prescoringModule = (): ReactNode => {
-        if (step === 1) return <PrescoringForm />;
-        else if (step === 2) return <LoanOffers />;
-        else if (step === 3) return <LoanMessage/>
+        if (prescoringStep === 1) return <PrescoringForm />;
+        else if (prescoringStep === 2) return <LoanOffers />;
+        else if (prescoringStep === 3) return <LoanMessage/>
 
     };
 
     return (
         <div className="container">
             <Header headerlinks={headerlinks}/>
-            <PlatinumCard scroll={scrollToTarget} cardFeatures={cardFeatures} text={buttonText}/>
+            <PlatinumCard 
+                buttonHandle={
+                    buttonText !=='Continue registration' 
+                    ? scrollToTarget 
+                    : checkApplicationStatus} 
+                    cardFeatures={cardFeatures} 
+                    text={buttonText}/>
             <TabsPanel tabs={tabs} />
             <GetCard getCardSteps={getCardSteps}/>
             <div ref={targetRef}>

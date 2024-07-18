@@ -4,13 +4,14 @@ import { LoanCard, Button } from '@UI';
 import { sortOffers } from '@utils';
 import { IOffersList, IOffer } from '../../../types/interfaces';
 import { postOffer } from '@api';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from '../../../hooks';
 import { setButtonText, setPrescoringStep, setStatus, offersState } from "../../../store/prescoringSlice";
+import { setApplicationId, setApplicationStep } from '../../../store/applicationSlice';
 
 const LoanOffers: FC = ({ }) => {
-    const offersData: IOffersList = useSelector(offersState)
+    const offersData: IOffersList = useAppSelector(offersState)
     const sortedOffers: IOffersList = sortOffers(offersData);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const handleSubmit = async (index: number) => {
         const offer = sortedOffers[index];
@@ -22,6 +23,8 @@ const LoanOffers: FC = ({ }) => {
                 dispatch(setButtonText('Continue registration'));
                 dispatch(setStatus("success"));
                 dispatch(setPrescoringStep(3));
+                dispatch(setApplicationStep(3));
+                dispatch(setApplicationId(offer.applicationId));
             } else throw new Error();
         } catch (error) {
             dispatch(setStatus("error"));

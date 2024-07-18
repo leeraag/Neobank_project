@@ -7,17 +7,18 @@ import okField from '@assets/icons/okField.svg'
 import errorField from '@assets/icons/errorField.svg'
 import requiredField from '@assets/icons/required.svg'
 import { postPrescoring } from '@api';
-import { useDispatch, useSelector } from 'react-redux';
 import { setButtonText, 
         setPrescoringStep, 
         setStatus, 
-        formDataState, 
+        formDataState,
         setFormData, 
         setOffers } from "../../../store/prescoringSlice";
+import { setApplicationStep } from '../../../store/applicationSlice';
+import { useAppSelector, useAppDispatch } from '../../../hooks';
 
 const PrescoringForm: FC = () => {
-    const dispatch = useDispatch();
-    const initialFormData = useSelector(formDataState);
+    const dispatch = useAppDispatch();
+    const initialFormData = useAppSelector(formDataState);
 
     const handleSubmit = async (formValues: {}) => {
         // включается loader
@@ -29,6 +30,7 @@ const PrescoringForm: FC = () => {
                 dispatch(setButtonText("Choose an offer"));
                 dispatch(setStatus("success"));
                 dispatch(setPrescoringStep(2));
+                dispatch(setApplicationStep(2));
             } else throw new Error();
         } catch (error) {
             dispatch(setStatus("error"));
@@ -39,11 +41,11 @@ const PrescoringForm: FC = () => {
         validationSchema: prescoringSchema,
         onSubmit: (values) => {
             const formValues = {
-                amount: parseInt(values.amount, 10),
+                amount: Number(values.amount),
                 lastName: values.lastName.trim(),
                 firstName: values.firstName.trim(),
                 middleName: values.middleName,
-                term: parseInt(values.term, 10),
+                term: Number(values.term),
                 email: values.email.trim(),
                 birthdate: values.birthdate,
                 passportSeries: values.passportSeries,

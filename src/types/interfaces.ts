@@ -6,7 +6,7 @@ export interface INews {
 }
 
 export interface IPrescoringForm {
-    amount: number | string;
+    amount: number;
     term: number;
     firstName: string;
     lastName: string;

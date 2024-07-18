@@ -1,5 +1,6 @@
 import { type IPrescoringForm, type IOffersList } from "../types/interfaces";
 import { type PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { RootState } from "./store";
 
 interface IPrescoringState {
   formData: IPrescoringForm;
@@ -11,7 +12,7 @@ interface IPrescoringState {
 
 const initialState: IPrescoringState = {
   formData: {
-    amount: "",
+    amount: 150000,
     term: 6,
     firstName: "",
     lastName: "",
@@ -50,10 +51,12 @@ const prescoringSlice = createSlice({
 });
 
 export const { setFormData, setOffers, setPrescoringStep, setStatus, setButtonText } = prescoringSlice.actions;
-export const formDataState = (state: any) => state.formData;
-export const offersState = (state: any)=> state.offers;
-export const prescoringStepState = (state: any) => state.prescoringStep;
-export const statusState = (state: any) => state.status;
-export const buttonTextState = (state: any) => state.buttonText;
+
+// Other code such as selectors can use the imported `RootState` type
+export const formDataState = (state: RootState) => state.prescoring.formData;
+export const offersState = (state: RootState) => state.prescoring.offers;
+export const prescoringStepState = (state: RootState) => state.prescoring.prescoringStep;
+export const statusState = (state: RootState) => state.prescoring.status;
+export const buttonTextState = (state: RootState) => state.prescoring.buttonText;
 
 export default prescoringSlice.reducer;

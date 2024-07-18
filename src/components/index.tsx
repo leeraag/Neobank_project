@@ -1,5 +1,14 @@
 export { BankFeatures, Converter, Map, Subscribe, ChooseCard, News } from './Home';
-export { PlatinumCard, GetCard, About, Rates, Cashback, FAQ, PrescoringForm, LoanOffers, LoanMessage } from './Loan';
+export { PlatinumCard, 
+        GetCard, 
+        About, 
+        Rates, 
+        Cashback, 
+        FAQ, 
+        PrescoringForm, 
+        LoanOffers, 
+        LoanMessage } from './Loan';
+export { ScoringForm, ScoringMessage } from './Scoring';
 export { NotFoundModule } from './NotFoundModule';
 export { Header, 
         Footer, 

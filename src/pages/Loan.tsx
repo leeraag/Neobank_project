@@ -29,7 +29,6 @@ import '@assets/styles/index.scss';
 import { statusState, prescoringStepState, buttonTextState } from "../store/prescoringSlice";
 import { applicationStepState, applicationIdState } from "../store/applicationSlice";
 import { useNavigate } from "react-router-dom";
-import { routes } from "../router/routes";
 
 const Loan: FC = () => {
     const buttonText = useAppSelector(buttonTextState);
@@ -56,8 +55,6 @@ const Loan: FC = () => {
 
     // проверить шаг заявки и перейти к нужной странице
     const checkApplicationStatus = () => {
-        console.log('Testing continue registration')
-        console.log(routes[2])
         if (applicationStep === 3) {
             navigate(`/loan/${applicationId}`);
         }

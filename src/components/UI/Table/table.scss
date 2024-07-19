@@ -30,14 +30,23 @@
         height: 40px;
         width: max-content;
         &-item {
-            font: $tooltip;
-            color: #4A5568;
             box-sizing: border-box;
             text-align: start;
 
             .item-cell {
-                text-align: start;
                 width: 200px;
+            }
+            .sortingBtn {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: start;
+                padding: 0;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                font: $tooltip;
+                color: #4A5568;
             }
         }
     }
@@ -60,4 +69,15 @@
     .table__header-item, .table__body-row {
         font: $small-text;
     }
+}
+
+
+
+.sort-top {
+    cursor: pointer;
+    transition: transform 0.1s ease-out;
+  }
+  
+.sort-bottom {
+    transform: rotate(180deg);
 }

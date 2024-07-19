@@ -36,6 +36,13 @@
 .mainBtnDisabled {
     @extend .mainBtn;
     background-color: #7796C0;
+    cursor: not-allowed;
+
+    &:active {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
 }
 
 .subscribeBtn {

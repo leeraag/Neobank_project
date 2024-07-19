@@ -8,7 +8,16 @@ import { applicationIdState, setApplicationStep } from '../../../store/applicati
 const Payments: FC = ({ }) => {
     const applicationId = useAppSelector(applicationIdState);
     const [paymentsTable, setPaymentsTable] = useState([]);
-    const tableHeaders = ["NUMBER", "DATE", "TOTAL PAYMENT", "INTEREST PAYMENT", "DEBT PAYMENT", "REMAINING DEBT"]
+    type Data = typeof paymentsTable;
+    type SortKeys = keyof Data[0];
+    const tableHeaders: { key: SortKeys; label: string }[] = [
+        { key: "number", label: "NUMBER" },
+        { key: "date", label: "DATE" },
+        { key: "totalPayment", label: "TOTAL PAYMENT" },
+        { key: "interestPayment", label: "INTEREST PAYMENT" },
+        { key: "debtPayment", label: "DEBT PAYMENT" },
+        { key: "remainingDebt", label: "REMAINING DEBT" },
+    ];
     const [check, setCheck] = useState(false);
     const dispatch = useAppDispatch();
 
@@ -41,8 +50,6 @@ const Payments: FC = ({ }) => {
             } catch (error) {
                 console.error(error);
             }
-        } else {
-            console.log('No payments to export');
         }
     }
 

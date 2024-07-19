@@ -6,6 +6,19 @@ import { useAppSelector, useAppDispatch } from '../../../hooks';
 import { applicationIdState, setApplicationStep } from '../../../store/applicationSlice';
 
 const Payments: FC = ({ }) => {
+    // проверка размера экрана для адаптивного отображения кнопок
+    const [width, setWidth] = useState(window.innerWidth);
+    const breakpoint = 768;
+    useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+        // subscribe to window resize event "onComponentDidMount"
+        window.addEventListener("resize", handleResizeWindow);
+        return () => {
+        // unsubscribe "onComponentDestroy"
+        window.removeEventListener("resize", handleResizeWindow);
+        };
+    }, []);
+
     const applicationId = useAppSelector(applicationIdState);
     const [paymentsTable, setPaymentsTable] = useState([]);
     type Data = typeof paymentsTable;
@@ -67,23 +80,44 @@ const Payments: FC = ({ }) => {
                 paymentsTable.length === 0 ? <Loader />
                 : <Table headers={tableHeaders} rows={paymentsTable}/>
             }
-            <div className="payments__buttons">
-                <Button className="denyBtn">Deny</Button>
-                <div className="payments__buttons-agreement">
-                    <Checkbox 
-                        label={"I agree with the payment schedule"}
-                        isChecked={false}
-                        onChange={handleCheckboxChange} />
-                    <Button 
-                        className={check === true ? "mainBtn" : "mainBtnDisabled"}
-                        onClick={sendAgreement}>
-                        Send
-                    </Button>
+            {
+                width < breakpoint ?
+                <>
+                    <div className="buttons__small">
+                        <Checkbox 
+                            label={"I agree with the payment schedule"}
+                            isChecked={false}
+                            onChange={handleCheckboxChange} />
+                        <div className="buttons__small-main">
+                            <Button className="denyBtn">Deny</Button>
+                            <Button 
+                                className={check === true && paymentsTable.length !== 0 ? "mainBtn" : "mainBtnDisabled"}
+                                onClick={sendAgreement}>
+                                Send
+                            </Button>
+                        </div>
+                        
+                    </div>
+                </>
+                : 
+                <>
+                <div className="payments__buttons">
+                    <Button className="denyBtn">Deny</Button>
+                    <div className="payments__buttons-agreement">
+                        <Checkbox 
+                            label={"I agree with the payment schedule"}
+                            isChecked={false}
+                            onChange={handleCheckboxChange} />
+                        <Button 
+                            className={check === true && paymentsTable.length !== 0 ? "mainBtn" : "mainBtnDisabled"}
+                            onClick={sendAgreement}>
+                            Send
+                        </Button>
+                    </div>
                 </div>
+                </>
 
-            </div>
-
-           
+            }
         </article>
     );
 };

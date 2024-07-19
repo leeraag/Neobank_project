@@ -25,4 +25,5 @@ export { Header,
         AmountInput,
         LoanCard,
         Table,
-        Checkbox } from './UI';
+        Checkbox,
+        Modal } from './UI';

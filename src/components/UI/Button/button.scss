@@ -82,3 +82,16 @@
     @extend .mainBtn;
     background: rgba(217, 55, 55, 0.8);
 }
+
+.closeBtn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 20px;
+
+    &:active {
+        -webkit-box-shadow: 0px 0px 18px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px 0px 18px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px 0px 18px 0px rgba(34, 60, 80, 0.2);
+    }
+}

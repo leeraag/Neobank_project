@@ -14,3 +14,4 @@ export { AmountInput } from './AmountInput';
 export { LoanCard } from './LoanCard';
 export { Table } from './Table';
 export { Checkbox } from './Checkbox';
+export { Modal } from './Modal';

@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import './payments.scss';
-import { Button, FormHeader, Table, Loader, Checkbox } from '@UI';
+import { Button, FormHeader, Table, Loader, Checkbox, Modal } from '@UI';
 import { getPayments, postDocument } from '@api';
 import { useAppSelector, useAppDispatch } from '../../../hooks';
 import { applicationIdState, setApplicationStep } from '../../../store/applicationSlice';
@@ -33,6 +33,9 @@ const Payments: FC = ({ }) => {
     ];
     const [check, setCheck] = useState(false);
     const dispatch = useAppDispatch();
+
+    const [isModal, setModal] = useState(false)
+    const onClose = () => setModal(false)
 
     // получаем содержимое таблицы
     const paymentsData = async () => {
@@ -89,20 +92,23 @@ const Payments: FC = ({ }) => {
                             isChecked={false}
                             onChange={handleCheckboxChange} />
                         <div className="buttons__small-main">
-                            <Button className="denyBtn">Deny</Button>
+                            <Button 
+                                className="denyBtn"
+                                onClick={() => setModal(true)}>Deny</Button>
                             <Button 
                                 className={check === true && paymentsTable.length !== 0 ? "mainBtn" : "mainBtnDisabled"}
                                 onClick={sendAgreement}>
                                 Send
                             </Button>
-                        </div>
-                        
+                        </div> 
                     </div>
                 </>
                 : 
                 <>
                 <div className="payments__buttons">
-                    <Button className="denyBtn">Deny</Button>
+                    <Button 
+                        className="denyBtn"
+                        onClick={() => setModal(true)}>Deny</Button>
                     <div className="payments__buttons-agreement">
                         <Checkbox 
                             label={"I agree with the payment schedule"}
@@ -118,6 +124,18 @@ const Payments: FC = ({ }) => {
                 </>
 
             }
+            <Modal
+                visible={isModal}
+                title='Deny application'
+                content={<p>You exactly sure, you want to cancel this application?</p>}
+                buttons={
+                    <>
+                        <Button className="denyBtn" onClick={onClose}>Deny</Button>
+                        <Button className="mainBtn" onClick={onClose}>Cancel</Button>
+                    </>
+                }
+                onClose={onClose}
+            />
         </article>
     );
 };

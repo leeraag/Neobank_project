@@ -57,6 +57,8 @@ const Loan: FC = () => {
     const checkApplicationStatus = () => {
         if (applicationStep === 3) {
             navigate(`/loan/${applicationId}`);
+        } else if (applicationStep === 4) {
+            navigate(`/loan/${applicationId}/document`);
         }
     }
 

@@ -12,3 +12,7 @@ export const API_URL_PRESCORING = 'http://localhost:8080/application'
 export const API_URL_OFFER = 'http://localhost:8080/application/apply'
 
 export const API_URL_SCORING = 'http://localhost:8080/application/registration/'
+
+export const API_URL_PAYMENTS = 'http://localhost:8080/admin/application/'
+
+export const API_URL_DOCUMENT = 'http://localhost:8080/document/'

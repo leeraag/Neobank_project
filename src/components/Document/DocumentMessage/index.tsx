@@ -1,0 +1,1 @@
+export { DocumentMessage } from './DocumentMessage';

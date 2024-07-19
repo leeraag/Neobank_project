@@ -8,7 +8,9 @@ export {
     API_URL_EMAIL, 
     API_URL_PRESCORING, 
     API_URL_OFFER,
-    API_URL_SCORING } from './api';
+    API_URL_SCORING,
+    API_URL_PAYMENTS,
+    API_URL_DOCUMENT } from './api';
 export type { IAbout, IRates, ICashback, IReceivingCard, IUsingCard } from './tabs';
 export { aboutItems, ratesItems, cashbackItems, receivingCardItems, usingCardItems } from './tabs';
 export type { ICardFeature } from './cardFeatures';

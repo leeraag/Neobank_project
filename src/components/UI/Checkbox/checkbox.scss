@@ -1,0 +1,16 @@
+@import '@assets/styles/vars.scss';
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    font: $text-large;
+
+    &__input {
+        transform: scale(2);
+    }
+    &__input:checked {
+        background-color: #3182CE;
+    }
+}

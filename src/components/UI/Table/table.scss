@@ -1,0 +1,63 @@
+@import '@assets/styles/vars.scss';
+
+.container {
+    overflow-x: scroll;
+    margin-bottom: 40px;
+}
+.container::-webkit-scrollbar {
+    height: 5px;
+    border-radius: 5px;
+    background-color: #E2E8F0;
+}
+.container::-webkit-scrollbar-track {
+    cursor: pointer;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #4A5568;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.table {
+    box-sizing: border-box;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+
+    &__header {
+        border-bottom: 1px solid #E2E8F0;
+        height: 40px;
+        width: max-content;
+        &-item {
+            font: $tooltip;
+            color: #4A5568;
+            box-sizing: border-box;
+            text-align: start;
+
+            .item-cell {
+                text-align: start;
+                width: 200px;
+            }
+        }
+    }
+
+    &__body {
+        &-row {
+            border-bottom: 1px solid #E2E8F0;
+            height: 40px;
+            font: $tooltip;
+            color: #1A202C;
+
+            .row-cell {
+                width: 200px;
+            }
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .table__header-item, .table__body-row {
+        font: $small-text;
+    }
+}

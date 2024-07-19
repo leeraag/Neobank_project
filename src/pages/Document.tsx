@@ -1,25 +1,27 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import { headerlinks, footerlinks } from "@constant";
 import {
     Header,
     Footer,
+    Payments,
+    DocumentMessage
 } from "@components";
 import { useAppSelector } from "../hooks";
-import { applicationIdState } from "../store/applicationSlice";
+import { applicationStepState } from "../store/applicationSlice";
 
 
 const Document: FC = () => {
-    const applicationId = useAppSelector(applicationIdState);
+    const applicationStep = useAppSelector(applicationStepState);
 
-    // const scoringModule = (): ReactNode => {
-    //     if (applicationStep === 3) return <ScoringForm />;
-    //     else if (applicationStep === 4) return <ScoringMessage /> ;
-    // };
+    const documentModule = (): ReactNode => {
+        if (applicationStep === 4) return <Payments/>;
+        else if (applicationStep === 5) return <DocumentMessage /> ;
+    };
 
     return (
         <div className="container">
             <Header headerlinks={headerlinks}/>
-            <h1>Document {applicationId}</h1>
+            {documentModule()}
             <Footer footerlinks={footerlinks}/>
         </div>
     );

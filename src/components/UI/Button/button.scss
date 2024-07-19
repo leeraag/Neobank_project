@@ -33,6 +33,11 @@
     }
 }
 
+.mainBtnDisabled {
+    @extend .mainBtn;
+    background-color: #7796C0;
+}
+
 .subscribeBtn {
     width: max-content;
     height: auto;
@@ -64,4 +69,9 @@
         padding: 8px;
         font: $text-large;
     }
+}
+
+.denyBtn {
+    @extend .mainBtn;
+    background: rgba(217, 55, 55, 0.8);
 }

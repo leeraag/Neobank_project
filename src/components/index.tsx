@@ -9,6 +9,7 @@ export { PlatinumCard,
         LoanOffers, 
         LoanMessage } from './Loan';
 export { ScoringForm, ScoringMessage } from './Scoring';
+export { Payments, DocumentMessage } from './Document';
 export { NotFoundModule } from './NotFoundModule';
 export { Header, 
         Footer, 
@@ -22,4 +23,6 @@ export { Header,
         Input, 
         Select, 
         AmountInput,
-        LoanCard } from './UI';
+        LoanCard,
+        Table,
+        Checkbox } from './UI';

@@ -3,33 +3,33 @@ import { headerlinks, footerlinks } from "@constant";
 import {
     Header,
     Footer,
-    Payments,
+    SignStep,
     MessageStep
 } from "@components";
 import { useAppSelector } from "../hooks";
 import { applicationStepState } from "../store/applicationSlice";
 
 
-const Document: FC = () => {
+const Sign: FC = () => {
     const applicationStep = useAppSelector(applicationStepState);
 
-    const documentModule = (): ReactNode => {
-        if (applicationStep === 4) {
-            return <Payments/>;
-        } else if (applicationStep === 5) {
+    const signModule = (): ReactNode => {
+        if (applicationStep === 5) {
+            return <SignStep/>
+        } else if (applicationStep === 6) { 
             return <MessageStep 
-                    title={"Documents are formed"}
-                    text={"Documents for signing will be sent to your email"}/>; 
+                    title={"Documents have been successfully signed and sent for approval"}
+                    text={"Within 10 minutes you will be sent a PIN code to your email for confirmation"}/>
         }
     };
 
     return (
         <div className="container">
             <Header headerlinks={headerlinks}/>
-            {documentModule()}
+            {signModule()}
             <Footer footerlinks={footerlinks}/>
         </div>
     );
 };
 
-export { Document };
+export { Sign };

@@ -7,8 +7,8 @@ import okField from '@assets/icons/okField.svg'
 import errorField from '@assets/icons/errorField.svg'
 import requiredField from '@assets/icons/required.svg'
 import { putScoring } from '@api';
-import { setApplicationStep, applicationIdState } from '../../../store/applicationSlice';
-import { useAppSelector, useAppDispatch } from '../../../hooks';
+import { setApplicationStep, applicationIdState } from '../../store/applicationSlice';
+import { useAppSelector, useAppDispatch } from '../../hooks';
 
 const ScoringForm: FC = () => {
     const applicationId = useAppSelector(applicationIdState);

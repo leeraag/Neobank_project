@@ -3,3 +3,4 @@ export { NotFound } from './NotFound';
 export { Loan } from './Loan';
 export { Scoring } from './Scoring';
 export { Document } from './Document';
+export { Sign } from './Sign';

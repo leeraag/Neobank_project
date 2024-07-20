@@ -15,3 +15,4 @@ export { LoanCard } from './LoanCard';
 export { Table } from './Table';
 export { Checkbox } from './Checkbox';
 export { Modal } from './Modal';
+export { MessageStep } from './MessageStep';

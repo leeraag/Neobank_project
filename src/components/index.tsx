@@ -8,8 +8,9 @@ export { PlatinumCard,
         PrescoringForm, 
         LoanOffers, 
         LoanMessage } from './Loan';
-export { ScoringForm, ScoringMessage } from './Scoring';
-export { Payments, DocumentMessage } from './Document';
+export { ScoringForm } from './Scoring';
+export { Payments } from './Document';
+export { SignStep } from './Sign';
 export { NotFoundModule } from './NotFoundModule';
 export { Header, 
         Footer, 
@@ -26,4 +27,5 @@ export { Header,
         LoanCard,
         Table,
         Checkbox,
-        Modal } from './UI';
+        Modal,
+        MessageStep } from './UI';

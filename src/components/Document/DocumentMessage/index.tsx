@@ -1,1 +1,0 @@
-export { DocumentMessage } from './DocumentMessage';

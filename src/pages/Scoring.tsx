@@ -4,19 +4,23 @@ import {
     Header,
     Footer,
     ScoringForm,
-    ScoringMessage
+    MessageStep,
 } from "@components";
 import { useAppSelector } from "../hooks";
 import { applicationStepState } from "../store/applicationSlice";
-
 
 const Scoring: FC = () => {
     const applicationStep = useAppSelector(applicationStepState);
 
     const scoringModule = (): ReactNode => {
-        if (applicationStep === 3) return <ScoringForm />;
-        else if (applicationStep === 4) return <ScoringMessage /> ;
-    };
+        if (applicationStep === 3) {
+            return <ScoringForm />;
+        } else if (applicationStep === 4) {
+            return <MessageStep 
+                    title={"Wait for a decision on the application"}
+                    text={"The answer will come to your mail within 10 minutes"}/> ;
+        };
+    }
 
     return (
         <div className="container">

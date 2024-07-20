@@ -1,1 +1,0 @@
-export { ScoringForm } from './ScoringForm';

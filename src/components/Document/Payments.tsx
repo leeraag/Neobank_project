@@ -2,8 +2,8 @@ import { FC, useEffect, useState } from 'react';
 import './payments.scss';
 import { Button, FormHeader, Table, Loader, Checkbox, Modal } from '@UI';
 import { getPayments, postDocument } from '@api';
-import { useAppSelector, useAppDispatch } from '../../../hooks';
-import { applicationIdState, setApplicationStep } from '../../../store/applicationSlice';
+import { useAppSelector, useAppDispatch } from '../../hooks';
+import { applicationIdState, setApplicationStep } from '../../store/applicationSlice';
 
 const Payments: FC = ({ }) => {
     // проверка размера экрана для адаптивного отображения кнопок

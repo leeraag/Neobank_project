@@ -96,7 +96,8 @@ const Payments: FC = ({ }) => {
                                 className="denyBtn"
                                 onClick={() => setModal(true)}>Deny</Button>
                             <Button 
-                                className={check === true && paymentsTable.length !== 0 ? "mainBtn" : "mainBtnDisabled"}
+                                className={check === true && paymentsTable.length !== 0 
+                                    ? "mainBtn" : "mainBtnDisabled"}
                                 onClick={sendAgreement}>
                                 Send
                             </Button>
@@ -105,37 +106,26 @@ const Payments: FC = ({ }) => {
                 </>
                 : 
                 <>
-                <div className="payments__buttons">
-                    <Button 
-                        className="denyBtn"
-                        onClick={() => setModal(true)}>Deny</Button>
-                    <div className="payments__buttons-agreement">
-                        <Checkbox 
-                            label={"I agree with the payment schedule"}
-                            isChecked={false}
-                            onChange={handleCheckboxChange} />
+                    <div className="payments__buttons">
                         <Button 
-                            className={check === true && paymentsTable.length !== 0 ? "mainBtn" : "mainBtnDisabled"}
-                            onClick={sendAgreement}>
-                            Send
-                        </Button>
+                            className="denyBtn"
+                            onClick={() => setModal(true)}>Deny</Button>
+                        <div className="payments__buttons-agreement">
+                            <Checkbox 
+                                label={"I agree with the payment schedule"}
+                                isChecked={false}
+                                onChange={handleCheckboxChange} />
+                            <Button 
+                                className={check === true && paymentsTable.length !== 0 
+                                    ? "mainBtn" : "mainBtnDisabled"}
+                                onClick={sendAgreement}>
+                                Send
+                            </Button>
+                        </div>
                     </div>
-                </div>
                 </>
-
             }
-            <Modal
-                visible={isModal}
-                title='Deny application'
-                content={<p>You exactly sure, you want to cancel this application?</p>}
-                buttons={
-                    <>
-                        <Button className="denyBtn" onClick={onClose}>Deny</Button>
-                        <Button className="mainBtn" onClick={onClose}>Cancel</Button>
-                    </>
-                }
-                onClose={onClose}
-            />
+            <Modal visible={isModal} onClose={onClose}/>
         </article>
     );
 };

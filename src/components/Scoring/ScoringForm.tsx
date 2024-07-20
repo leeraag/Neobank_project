@@ -6,13 +6,16 @@ import { scoringSchema } from '@utils';
 import okField from '@assets/icons/okField.svg'
 import errorField from '@assets/icons/errorField.svg'
 import requiredField from '@assets/icons/required.svg'
-import { putScoring } from '@api';
+import { putScoring, getApplicationStatus } from '@api';
 import { setApplicationStep, applicationIdState } from '../../store/applicationSlice';
 import { useAppSelector, useAppDispatch } from '../../hooks';
+import { useNavigate } from "react-router-dom";
+import { persistor } from '../../store/store';
 
 const ScoringForm: FC = () => {
     const applicationId = useAppSelector(applicationIdState);
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const initialFormData = {
         gender: "",
@@ -33,6 +36,13 @@ const ScoringForm: FC = () => {
             const result = await putScoring(applicationId, formValues);
             if (result) {
                 dispatch(setApplicationStep(4));
+                const status = await getApplicationStatus(applicationId);
+                setTimeout(() => {
+                    if (status === "CC_DENIED") {
+                        persistor.purge(); // очистка store
+                        navigate("/");
+                    }
+                }, 20000);
             } else throw new Error();
         } catch (error) {
             console.error(error);

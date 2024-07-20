@@ -7,3 +7,4 @@ export { putScoring } from './putScoring';
 export { getPayments } from './getPayments';
 export { postDocument } from './postDocument';
 export { postSign } from './postSign';
+export { postCode } from './postCode';

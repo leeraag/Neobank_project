@@ -31,7 +31,6 @@ const Modal: FC<TModal> = ({ visible, onClose }) => {
   })
 
   const denyHandler = () => {
-    console.log("test")
     persistor.purge(); // очистка store
     navigate("/");
     window.location.reload();

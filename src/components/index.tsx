@@ -11,6 +11,7 @@ export { PlatinumCard,
 export { ScoringForm } from './Scoring';
 export { Payments } from './Document';
 export { SignStep } from './Sign';
+export { CodeSection } from './Code';
 export { NotFoundModule } from './NotFoundModule';
 export { Header, 
         Footer, 

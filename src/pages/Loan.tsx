@@ -59,6 +59,10 @@ const Loan: FC = () => {
             navigate(`/loan/${applicationId}`);
         } else if (applicationStep === 4) {
             navigate(`/loan/${applicationId}/document`);
+        } else if (applicationStep === 5) {
+            navigate(`/loan/${applicationId}/document/sign`);
+        } else if (applicationStep === 6) {
+            navigate(`/loan/${applicationId}/code`)
         }
     }
 

@@ -1,6 +1,6 @@
 import { type IPrescoringForm, type IOffersList } from "../types/interfaces";
 import { type PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { RootState } from "./store";
+import { RootState } from "./main";
 
 interface IPrescoringState {
   formData: IPrescoringForm;

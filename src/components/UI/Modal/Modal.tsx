@@ -3,7 +3,7 @@ import './modal.scss'
 import { Button } from '@UI';
 import close from '@assets/icons/close.svg'
 import { useNavigate } from 'react-router-dom';
-import { persistor } from '../../../store/store';
+import { persistor } from '../../../store/main';
 
 type TModal = {
   visible: boolean,

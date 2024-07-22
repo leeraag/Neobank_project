@@ -10,7 +10,7 @@ import { putScoring, getApplicationStatus } from '@api';
 import { setApplicationStep, applicationIdState } from '../../store/applicationSlice';
 import { useAppSelector, useAppDispatch } from '../../hooks';
 import { useNavigate } from "react-router-dom";
-import { persistor } from '../../store/store';
+import { persistor } from '../../store/main';
 
 const ScoringForm: FC = () => {
     const applicationId = useAppSelector(applicationIdState);

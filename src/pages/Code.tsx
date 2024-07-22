@@ -9,7 +9,7 @@ import {
 import { useAppSelector } from "../hooks";
 import { applicationStepState } from "../store/applicationSlice";
 import { useNavigate } from 'react-router-dom';
-import { persistor } from '../store/store';
+import { persistor } from '../store/main';
 
 const Code: FC = () => {
     const applicationStep = useAppSelector(applicationStepState);

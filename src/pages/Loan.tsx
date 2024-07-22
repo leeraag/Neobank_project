@@ -55,14 +55,19 @@ const Loan: FC = () => {
 
     // проверить шаг заявки и перейти к нужной странице
     const checkApplicationStatus = () => {
-        if (applicationStep === 3) {
-            navigate(`/loan/${applicationId}`);
-        } else if (applicationStep === 4) {
-            navigate(`/loan/${applicationId}/document`);
-        } else if (applicationStep === 5) {
-            navigate(`/loan/${applicationId}/document/sign`);
-        } else if (applicationStep === 6) {
-            navigate(`/loan/${applicationId}/code`)
+        switch (applicationStep) {
+            case 3:
+                navigate(`/loan/${applicationId}`);
+                break;
+            case 4: 
+                navigate(`/loan/${applicationId}/document`);
+                break;
+            case 5:
+                navigate(`/loan/${applicationId}/document/sign`);
+                break;
+            case 6:
+                navigate(`/loan/${applicationId}/code`);
+                break;
         }
     }
 
@@ -73,6 +78,16 @@ const Loan: FC = () => {
         else if (prescoringStep === 3) return <LoanMessage/>
 
     };
+
+    const switchStatus = () => {
+        switch (status) {
+            case "loading": 
+                return <Loader />;
+            case "error": 
+                return <p className="request-error">Your request cannot be processed, an error has occurred</p>;
+            default: return prescoringModule();
+        }
+    }
 
     return (
         <div className="container">
@@ -87,15 +102,9 @@ const Loan: FC = () => {
             <TabsPanel tabs={tabs} />
             <GetCard getCardSteps={getCardSteps}/>
             <div ref={targetRef}>
-                {status === "loading" ? (
-                    <Loader />
-                ) : status === "error" ? (
-                    <p className="request-error">
-                        Your request cannot be processed, an error has occurred
-                    </p>
-                ) : (
-                    prescoringModule()
-                )}
+                {
+                    switchStatus()
+                }
             </div>
             <Footer footerlinks={footerlinks}/>
         </div>

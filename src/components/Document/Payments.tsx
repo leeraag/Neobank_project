@@ -7,7 +7,7 @@ import { applicationIdState, setApplicationStep } from '../../store/applicationS
 
 const Payments: FC = ({ }) => {
     // проверка размера экрана для адаптивного отображения кнопок
-    const [width, setWidth] = useState(window.innerWidth);
+    const [width, setWidth] = useState<number>(window.innerWidth);
     const breakpoint = 768;
     useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
@@ -31,10 +31,10 @@ const Payments: FC = ({ }) => {
         { key: "debtPayment", label: "DEBT PAYMENT" },
         { key: "remainingDebt", label: "REMAINING DEBT" },
     ];
-    const [check, setCheck] = useState(false);
+    const [check, setCheck] = useState<boolean>(false);
     const dispatch = useAppDispatch();
 
-    const [isModal, setModal] = useState(false)
+    const [isModal, setModal] = useState<boolean>(false)
     const onClose = () => setModal(false)
 
     // получаем содержимое таблицы

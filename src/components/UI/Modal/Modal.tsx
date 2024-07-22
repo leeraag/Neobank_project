@@ -11,7 +11,7 @@ type TModal = {
 }  
    
 const Modal: FC<TModal> = ({ visible, onClose }) => {
-  const [denyState, setDenyState] = useState(false);
+  const [denyState, setDenyState] = useState<boolean>(false);
   const navigate = useNavigate();
   const content = (denyState === true ? "Your application has been denied!"
   : "You exactly sure, you want to cancel this application?");

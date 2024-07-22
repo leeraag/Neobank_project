@@ -9,7 +9,7 @@ type TLinks = {
 }
 
 const Header: FC<TLinks> = ({ headerlinks } ) => {
-    const [showMenu, setShowMenu] = useState(false);
+    const [showMenu, setShowMenu] = useState<boolean>(false);
 
     const handleShowMenu = () => {
         setShowMenu(!showMenu);

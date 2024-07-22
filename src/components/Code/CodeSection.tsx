@@ -9,10 +9,10 @@ import { Loader } from '@UI';
 const CodeSection: FC = () => {
   const applicationId = useAppSelector(applicationIdState);
   const dispatch = useAppDispatch();
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<boolean>(false);
   const [codes, setCodes] = useState<string[]>(['', '', '', '']);
   const codeRefs = [useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null), useRef<HTMLInputElement>(null)];
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   // фокус в первое поле при загрузке
   useEffect(() => {

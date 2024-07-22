@@ -8,7 +8,7 @@ import file from '@assets/icons/file.svg'
 import { postSign } from '@api';
 
 const SignStep: FC = ({ }) => {
-    const [check, setCheck] = useState(false);
+    const [check, setCheck] = useState<boolean>(false);
     const applicationId = useAppSelector(applicationIdState);
     const dispatch = useAppDispatch();
     // изменение состояния чекбокса

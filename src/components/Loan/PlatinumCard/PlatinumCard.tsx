@@ -5,11 +5,12 @@ import { Button, Tooltip } from '@UI';
 import { ICardFeature } from '../../../constant';
 
 type TPlatinumCardProps = {
-    scroll: () => void;
+    buttonHandle: () => void;
     cardFeatures: Array<ICardFeature>;
+    text: string;
 };
 
-const PlatinumCard: FC<TPlatinumCardProps> = ({ scroll, cardFeatures }) => {
+const PlatinumCard: FC<TPlatinumCardProps> = ({ buttonHandle, cardFeatures, text }) => {
     return (
         <article className="creditCard">
             <section className="creditCard__description">
@@ -34,7 +35,7 @@ const PlatinumCard: FC<TPlatinumCardProps> = ({ scroll, cardFeatures }) => {
                         })
                     }
                 </div>
-                <Button className={"mainBtn"} onClick={scroll}>Apply for card</Button>
+                <Button className={"mainBtn"} onClick={buttonHandle}>{text}</Button>
             </section>
             
             <figure className="creditCard__figure">

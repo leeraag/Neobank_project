@@ -20,6 +20,7 @@ export const prescoringSchema = yup.object().shape({
         .required("First name is required"),
     middleName: yup
         .string()
+        .nullable()
         .min(2, "Patronymic must be at least 2 characters long")
         .max(30, "Patronymic must be at most 40 characters long")
         .matches(/^[A-Za-z]{2,30}$/, "Patronymic must only contain letters"),

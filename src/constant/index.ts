@@ -1,7 +1,16 @@
 export { headerlinks } from './headerlinks';
 export { footerlinks } from './footerlinks';
 export { baseCurrencies, mockCurrencies } from './currencies';
-export { API_KEY_CURRENCY, API_HOST_CURRENCY, API_URL_CURRENCY, API_URL_EMAIL } from './api';
+export { 
+    API_KEY_CURRENCY, 
+    API_HOST_CURRENCY, 
+    API_URL_CURRENCY, 
+    API_URL_EMAIL, 
+    API_URL_PRESCORING, 
+    API_URL_OFFER,
+    API_URL_SCORING,
+    API_URL_PAYMENTS,
+    API_URL_DOCUMENT } from './api';
 export type { IAbout, IRates, ICashback, IReceivingCard, IUsingCard } from './tabs';
 export { aboutItems, ratesItems, cashbackItems, receivingCardItems, usingCardItems } from './tabs';
 export type { ICardFeature } from './cardFeatures';

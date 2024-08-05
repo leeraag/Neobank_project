@@ -1,0 +1,66 @@
+@import '@assets/styles/vars.scss';
+
+.codeSection {
+    display: flex;
+    flex-direction: column;
+    margin: 3vh 5vw;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+
+    &__title {
+        font: $h3;
+        color: #1C1C1E;
+        margin: 32px;
+        text-align: center;
+    }
+
+    &__code {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        &-input {
+            width: 48px;
+            height: 48px;
+            box-sizing: border-box;
+            border: 1px solid #808080;
+            outline: 1px solid #808080;
+            background: transparent url(@assets/icons/placeholder.svg) center no-repeat;
+            border-radius: 8px;
+            padding: 14px;
+            font: $caption;
+            text-align: center;
+    
+            &:not(:placeholder-shown) {
+                background: transparent;
+            }
+    
+            &:not(:placeholder-shown), .codeInput:focus {
+                outline: 1px solid #3182CE;
+                border: 1px solid #3182CE;
+            }
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
+        }
+    }
+
+    &__error {
+        font: $text-large-medium;
+        color: #FF5631;
+        margin: 16px;
+        text-align: center;
+    }
+    
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+    .codeSection__code-input {
+        width: 32px;
+        height: 32px;
+        padding: 10px;
+        box-sizing: border-box;
+        font: $text-large-medium;
+    }
+}

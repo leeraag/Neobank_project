@@ -7,7 +7,7 @@ type TTooltipProps = {
 }
 
 const Tooltip: FC<TTooltipProps> = ({ text, children }) => {
-  const [showTooltip, setShowTooltip] = useState(false);
+  const [showTooltip, setShowTooltip] = useState<boolean>(false);
 
   const handleMouseEnter = () => {
     setShowTooltip(true);

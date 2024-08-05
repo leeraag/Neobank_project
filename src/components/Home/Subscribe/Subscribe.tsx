@@ -6,8 +6,8 @@ import './subscribe.scss'
 import { postEmail } from '@api';
 
 const Subscribe: FC = () => {
-    const [emailValue, setEmailValue] = useState('');
-    const [isSubscribed, setIsSubscribed] = useState(false);
+    const [emailValue, setEmailValue] = useState<string>('');
+    const [isSubscribed, setIsSubscribed] = useState<boolean>(false);
 
     useEffect(() => {
         if (localStorage.getItem('isSubscribed') === 'true') {

@@ -14,7 +14,7 @@ import { getCurrencies, getNews } from "@api";
 import { INews } from "../types/interfaces";
 
 const Home: FC = () => {
-    const [currencies, setCurrencies] = useState([]);
+    const [currencies, setCurrencies] = useState<string[]>([]);
     const [mockData, setMockData] = useState<string[]>([]);
     const [news, setNews] = useState<INews[]>([]);
     const miliseconds: number = 1000;

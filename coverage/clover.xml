@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1723122009245" clover="3.2.0">
+  <project timestamp="1723122009245" name="All files">
+    <metrics statements="366" coveredstatements="288" conditionals="58" coveredconditionals="20" methods="153" coveredmethods="37" elements="577" coveredelements="345" complexity="0" loc="366" ncloc="366" packages="29" files="66" classes="66"/>
+    <package name="components.Home">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
+      <file name="index.tsx" path="D:\neobank_project\src\components\Home\index.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="8" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Home.BankFeatures">
+      <metrics statements="9" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="BankFeatures.tsx" path="D:\neobank_project\src\components\Home\BankFeatures\BankFeatures.tsx">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\Home\BankFeatures\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Home.Converter">
+      <metrics statements="10" coveredstatements="7" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="Converter.tsx" path="D:\neobank_project\src\components\Home\Converter\Converter.tsx">
+        <metrics statements="9" coveredstatements="6" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\Home\Converter\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Home.Map">
+      <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="Map.tsx" path="D:\neobank_project\src\components\Home\Map\Map.tsx">
+        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\Home\Map\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Home.News">
+      <metrics statements="17" coveredstatements="11" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="News.tsx" path="D:\neobank_project\src\components\Home\News\News.tsx">
+        <metrics statements="16" coveredstatements="10" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="57" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\Home\News\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Home.Subscribe">
+      <metrics statements="26" coveredstatements="26" conditionals="6" coveredconditionals="6" methods="7" coveredmethods="7"/>
+      <file name="Subscribe.tsx" path="D:\neobank_project\src\components\Home\Subscribe\Subscribe.tsx">
+        <metrics statements="25" coveredstatements="25" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="37" type="stmt"/>
+        <line num="10" count="37" type="stmt"/>
+        <line num="12" count="37" type="stmt"/>
+        <line num="13" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="18" count="37" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="28" count="37" type="stmt"/>
+        <line num="29" count="28" type="stmt"/>
+        <line num="32" count="37" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="35" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\Home\Subscribe\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.Home.СhooseCard">
+      <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="ChooseCard.tsx" path="D:\neobank_project\src\components\Home\СhooseCard\ChooseCard.tsx">
+        <metrics statements="11" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\Home\СhooseCard\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI">
+      <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="6"/>
+      <file name="index.ts" path="D:\neobank_project\src\components\UI\index.ts">
+        <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="6"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="8" type="stmt"/>
+        <line num="3" count="49" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="12" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="13" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Accordion">
+      <metrics statements="14" coveredstatements="14" conditionals="6" coveredconditionals="6" methods="5" coveredmethods="5"/>
+      <file name="Accordion.tsx" path="D:\neobank_project\src\components\UI\Accordion\Accordion.tsx">
+        <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="21" count="14" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="36" count="7" type="stmt"/>
+        <line num="38" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\Accordion\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="10" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.AmountInput">
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="AmountInput.tsx" path="D:\neobank_project\src\components\UI\AmountInput\AmountInput.tsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\AmountInput\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Button">
+      <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="Button.tsx" path="D:\neobank_project\src\components\UI\Button\Button.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="42" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\Button\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="49" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Checkbox">
+      <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="Checkbox.tsx" path="D:\neobank_project\src\components\UI\Checkbox\Checkbox.tsx">
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="12" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="23" count="12" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\Checkbox\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="13" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Footer">
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <file name="Footer.tsx" path="D:\neobank_project\src\components\UI\Footer\Footer.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="28" count="10" type="stmt"/>
+        <line num="51" count="7" type="stmt"/>
+      </file>
+      <file name="index.ts" path="D:\neobank_project\src\components\UI\Footer\index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.FormHeader">
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="FormHeader.tsx" path="D:\neobank_project\src\components\UI\FormHeader\FormHeader.tsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\FormHeader\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Header">
+      <metrics statements="13" coveredstatements="12" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="3"/>
+      <file name="Header.tsx" path="D:\neobank_project\src\components\UI\Header\Header.tsx">
+        <metrics statements="12" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="2"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="31" count="8" type="stmt"/>
+        <line num="51" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\Header\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Input">
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="Input.tsx" path="D:\neobank_project\src\components\UI\Input\Input.tsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\Input\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Label">
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="Label.tsx" path="D:\neobank_project\src\components\UI\Label\Label.tsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\Label\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Loader">
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="Loader.tsx" path="D:\neobank_project\src\components\UI\Loader\Loader.tsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\Loader\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.LoanCard">
+      <metrics statements="8" coveredstatements="7" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="LoanCard.tsx" path="D:\neobank_project\src\components\UI\LoanCard\LoanCard.tsx">
+        <metrics statements="7" coveredstatements="6" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="59" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\LoanCard\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.MessageStep">
+      <metrics statements="7" coveredstatements="6" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="MessageStep.tsx" path="D:\neobank_project\src\components\UI\MessageStep\MessageStep.tsx">
+        <metrics statements="6" coveredstatements="5" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="32" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\MessageStep\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Modal">
+      <metrics statements="27" coveredstatements="9" conditionals="8" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <file name="Modal.tsx" path="D:\neobank_project\src\components\UI\Modal\Modal.tsx">
+        <metrics statements="26" coveredstatements="8" conditionals="8" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="76" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\Modal\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Select">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="Select.tsx" path="D:\neobank_project\src\components\UI\Select\Select.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="16" count="10" type="stmt"/>
+        <line num="27" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\Select\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.SliderCard">
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="SliderCard.tsx" path="D:\neobank_project\src\components\UI\SliderCard\SliderCard.tsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="29" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\SliderCard\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Table">
+      <metrics statements="25" coveredstatements="6" conditionals="10" coveredconditionals="0" methods="10" coveredmethods="0"/>
+      <file name="Table.tsx" path="D:\neobank_project\src\components\UI\Table\Table.tsx">
+        <metrics statements="24" coveredstatements="5" conditionals="10" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="85" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\Table\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.TabsPanel">
+      <metrics statements="10" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="TabsPanel.tsx" path="D:\neobank_project\src\components\UI\TabsPanel\TabsPanel.tsx">
+        <metrics statements="9" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="38" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\TabsPanel\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.UI.Tooltip">
+      <metrics statements="11" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="Tooltip.tsx" path="D:\neobank_project\src\components\UI\Tooltip\Tooltip.tsx">
+        <metrics statements="10" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="32" count="7" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="D:\neobank_project\src\components\UI\Tooltip\index.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="constant">
+      <metrics statements="34" coveredstatements="34" conditionals="0" coveredconditionals="0" methods="20" coveredmethods="2"/>
+      <file name="api.ts" path="D:\neobank_project\src\constant\api.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+      </file>
+      <file name="cardFeatures.ts" path="D:\neobank_project\src\constant\cardFeatures.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="2" type="stmt"/>
+      </file>
+      <file name="currencies.ts" path="D:\neobank_project\src\constant\currencies.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+      </file>
+      <file name="footerlinks.ts" path="D:\neobank_project\src\constant\footerlinks.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="getCardSteps.ts" path="D:\neobank_project\src\constant\getCardSteps.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="headerlinks.ts" path="D:\neobank_project\src\constant\headerlinks.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="index.ts" path="D:\neobank_project\src\constant\index.ts">
+        <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="20" coveredmethods="2"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="constant.tabs">
+      <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="about.ts" path="D:\neobank_project\src\constant\tabs\about.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+      </file>
+      <file name="cashback.ts" path="D:\neobank_project\src\constant\tabs\cashback.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="index.ts" path="D:\neobank_project\src\constant\tabs\index.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+      </file>
+      <file name="rates.ts" path="D:\neobank_project\src\constant\tabs\rates.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="2" type="stmt"/>
+      </file>
+      <file name="receivingCard.ts" path="D:\neobank_project\src\constant\tabs\receivingCard.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+      <file name="usingCard.ts" path="D:\neobank_project\src\constant\tabs\usingCard.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="store">
+      <metrics statements="36" coveredstatements="29" conditionals="0" coveredconditionals="0" methods="16" coveredmethods="1"/>
+      <file name="applicationSlice.ts" path="D:\neobank_project\src\store\applicationSlice.ts">
+        <metrics statements="9" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="14" count="7" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="29" count="7" type="stmt"/>
+        <line num="30" count="7" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
+      </file>
+      <file name="main.ts" path="D:\neobank_project\src\store\main.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="7" type="stmt"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+        <line num="17" count="7" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="36" count="7" type="stmt"/>
+        <line num="37" count="7" type="stmt"/>
+      </file>
+      <file name="prescoringSlice.ts" path="D:\neobank_project\src\store\prescoringSlice.ts">
+        <metrics statements="15" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="0"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
+        <line num="31" count="7" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="53" count="7" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
+        <line num="57" count="7" type="stmt"/>
+        <line num="58" count="7" type="stmt"/>
+        <line num="59" count="7" type="stmt"/>
+        <line num="60" count="7" type="stmt"/>
+        <line num="62" count="7" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

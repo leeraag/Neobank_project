@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import converter from '@assets/images/converter.svg';
-import { baseCurrencies } from '@constant';
+import { baseCurrencies } from '../../../constant/currencies';
 import './converter.scss';
-import { Loader } from '@UI';
+import { Loader } from '../../../components/UI';
 
 type TCurrencies = {
     currencies?: Array<any>;

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import './GetCard.scss';
+import './getCard.scss';
 import { IGetCardStep } from '../../../constant';
 
 type TGetCardProps = {
